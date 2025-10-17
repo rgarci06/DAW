@@ -7,14 +7,14 @@
   <title>EXERCICI 3</title>
 </head>
 <body>
-  <form action="/submit" method="POST">
-    <h1>REGISTRE</h1> <!--Un titol-->
-    <h3>Aquest formulari es per poder registrarte i aixi no suspendre la practica</h3> <!--Un subtitol-->
-    Nom: <input type="text"><br> <!--Aqui faig els inputs per possar el nom, cognoms, emails i el telefon-->
-    Cognoms: <input type="text"><br>
-    Email: <input type="email"><br>
-    Telefon: <input type="tel"><br>
-    <button type="submit">Enviar</button> <!--Aixo es el botó de enviar el formulari-->
+  <form onsubmit="alert('Formulari de Registre enviat!'); return false;">
+    <h1>REGISTRE</h1> <!--Això es un titol-->
+    <h3>Aquest formulari es per poder registrarte i aixi no suspendre la practica</h3> <!--Aixo es la descripcio amb una lletra mes petita-->
+      Nom: <input type="text" placeholder="Escriu el teu nom:"><br> <!--Aqui faig els inputs per possar el nom, cognoms, emails i el telefon-->
+      Cognoms: <input type="text" placeholder="Escriu els teus cognoms:"><br>
+      Email: <input type="email" placeholder="Escriu el teu email:"><br>
+      Telefon: <input type="tel" placeholder="Escriu el teu telefon:"><br>
+    <button type="submit">Registrarte</button> <!--Aixo es el botó de enviar el formulari-->
   </form>
 </body>
 </html>
