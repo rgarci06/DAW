@@ -3,18 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="sytle.css">
+  <link rel="stylesheet" href="./sytle.css">
   <title>EXERCICI 3</title>
 </head>
 <body>
-  <form onsubmit="alert('Formulari de Registre enviat!'); return false;">
-    <h1>REGISTRE</h1> <!--Això es un titol-->
-    <h3>Aquest formulari es per poder registrarte i aixi no suspendre la practica</h3> <!--Aixo es la descripcio amb una lletra mes petita-->
-      Nom: <input type="text" placeholder="Escriu el teu nom:"><br> <!--Aqui faig els inputs per possar el nom, cognoms, emails i el telefon-->
-      Cognoms: <input type="text" placeholder="Escriu els teus cognoms:"><br>
-      Email: <input type="email" placeholder="Escriu el teu email:"><br>
-      Telefon: <input type="tel" placeholder="Escriu el teu telefon:"><br>
-    <button type="submit">Registrarte</button> <!--Aixo es el botó de enviar el formulari-->
+  <form action="/submit" method="POST">
+    <h1>REGISTRE</h1>
+    <h3>Aquest formulari es per poder registrarte i aixi no suspendre la practica</h3>
+
+    Nom: <input type="text" name="nom" placeholder="Raúl" required><br>
+    Cognoms: <input type="text" name="cognoms" placeholder="Garcia Magro" required><br>
+    Email: <input type="email" name="email" placeholder="rgarci@insdanielblanxart.cat" required><br>
+    Telefon: <input type="tel" name="telefon" placeholder="68264324" maxlength="8" required><br>
+
+    <button type="submit">Registrar-te</button>
   </form>
 </body>
 </html>
