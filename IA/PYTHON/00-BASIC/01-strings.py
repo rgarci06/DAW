@@ -51,7 +51,7 @@ print(llista_anime)
 # ? join ajuntar array amb un caràcter especial ---------------------------------
 # preguntar que pot passar si l'array és int
 data=["9","7","2025"] 
-print(" ".join(data))
+print("/".join(data))
 
 # ? validadors de caràcters True/False ------------------------
 # si és alfanumèric
