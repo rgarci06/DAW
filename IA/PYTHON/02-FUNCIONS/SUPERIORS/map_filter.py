@@ -18,4 +18,4 @@ nomsMaju=map(lambda nom: nom.capitalize(), noms)
 
 # variable = filter(lambda, llista)
 parells=filter(lambda num: num%2==0, nums)
-print(list(parells))
+#print(list(parells))
