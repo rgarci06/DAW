@@ -7,7 +7,8 @@
 
 # Amb la funció date que ens retorni la data d'avui.
 
-# Aquesta, data d'avui, transformar-la en una data europea amb strftime(). 
+# Aquesta, data d'avui, transformar-la en una data europea amb strftime().
+
 
 # ? ----------PROGRAMA-------------
 # Preguntarem el nom de l'usuari.
