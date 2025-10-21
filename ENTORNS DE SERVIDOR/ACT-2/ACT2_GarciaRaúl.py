@@ -29,26 +29,38 @@ print("Data europea:", data_europea)
 # En sortir del programa mostrarà totes les activitats i les seves dates.
 # I dirà adeu a l'usuari amb el seu nom!
 
-nom_usuari = input("Introdueix el teu nom d'usuari: ")
-nom_usuaris = [nom_usuari]
+nom=input("Posa el teu nom d'usuari: ")
+activitats=dict([])
 
-while activitat or data == 0:
+while True:
 
-    activitat = input(f"Introdueix l'activitat que vols guardar (0 per sortir), {nom_usuari}: ")
-    data = input(f"Introdueix la data de l'activitat de {activitat} en format DD/MM/YYYY (0 per sortir), {nom_usuari}: ")
+    activitat=input(f"Nom de la activitat de {nom}: ")
 
-    llista_activitats = {}    
-    llista_activitats[data] = activitat
+    while activitat=="":
+        print("Error")
+        activitat=input(f"Nom de la activitat de {nom}: ")
 
-    if activitat == "" or data == "":
-        print ("Error")
-    
     if activitat == "0":
-        print(f"""
-        Nom d'usuari: {nom_usuari}
-        Nom de l'activitat: {activitat}
-        Data: {data_europea}""")
-        print(f"Adéu, {nom_usuari}!")
         break
-    
+
+    data=input(f"Data de la activitat de {activitat} (dd/mm/yyyy): ")
+
+    try:
+        data = datetime.strptime(data, "%d/%m/%Y").date()
+    except ValueError:
+        print("La data es inválida.")
+    else:
+        print("¡La data es correcta!")
+
+    if data == "0":
+        break
+
+    activitats[data]=activitat
+
+
+print(f"""
+Nom d'usuari: {nom} 
+Datas y Noms de les activitats: {activitats}
+""")
+print(f"Adéu {nom}!")
     
