@@ -22,13 +22,33 @@ print("Data europea:", data_europea)
 
 # ? ----------PROGRAMA-------------
 # Preguntarem el nom de l'usuari.
-nom_usuari = input("Introdueix el teu nom d'usuari: ")
 # Preguntarem usuari per una activitat posant el nom de l'usuari.
-activitat = input("Introdueix l'activitat que vols guardar: ")
 # Preguntarem usuari per aquesta activitat quin dia l'ha de fer. El calendari ha de ser Europeu.
-data = input("Introdueix la data de l'activitat (format DD/MM/YYYY): ")
 # Si l'activitat és un nombre o una cadena buida dirà que és error i ho tornarà a preguntar.
-
 # Si usuari posa 0 a activitat o a data. Sortirà del programa.
 # En sortir del programa mostrarà totes les activitats i les seves dates.
 # I dirà adeu a l'usuari amb el seu nom!
+
+nom_usuari = input("Introdueix el teu nom d'usuari: ")
+nom_usuaris = [nom_usuari]
+
+while activitat or data == 0:
+
+    activitat = input(f"Introdueix l'activitat que vols guardar (0 per sortir), {nom_usuari}: ")
+    data = input(f"Introdueix la data de l'activitat de {activitat} en format DD/MM/YYYY (0 per sortir), {nom_usuari}: ")
+
+    llista_activitats = {}    
+    llista_activitats[data] = activitat
+
+    if activitat == "" or data == "":
+        print ("Error")
+    
+    if activitat == "0":
+        print(f"""
+        Nom d'usuari: {nom_usuari}
+        Nom de l'activitat: {activitat}
+        Data: {data_europea}""")
+        print(f"Adéu, {nom_usuari}!")
+        break
+    
+    
