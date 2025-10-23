@@ -32,7 +32,7 @@ print("Data europea:", data_europea)
 from datetime import datetime
 
 # Demana el nom a l'usuari
-nom = input("Posa el teu nom d'usuari: ").strip()
+nom = input("Posa el teu nom d'usuari: ")
 
 # Aqui guardo la informació de les acttivitats
 activitats = {}
@@ -57,8 +57,8 @@ while True:
     try:
         data = datetime.strptime(data_str, "%d/%m/%Y").date()
     except ValueError:
-        print("Error: La data és invàlida. Torna-ho a intentar.")
-        continue  # Torna a començar el bucle per repetir aquesta activitat
+        print("Data invàlida. Torna-ho a intentar.")
+        continue
     else:
         print("La data és correcta!")
 
