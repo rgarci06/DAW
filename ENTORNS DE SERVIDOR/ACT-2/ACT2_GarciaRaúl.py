@@ -72,5 +72,3 @@ for data, act in activitats.items():
     print(f"- {data}: {act}")
 
 print(f"\nAdéu {nom}!")
-
-    
