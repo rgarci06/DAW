@@ -58,7 +58,7 @@ while True:
         data = datetime.strptime(data_str, "%d/%m/%Y").date()
     except ValueError:
         print("Data invàlida. Torna-ho a intentar.")
-        continue # Si la data es invalida, torna a començar el bucle
+        continue # Si la data es invalida, torna a començar el segon bucle
     else:
         print("La data és correcta!")
 
