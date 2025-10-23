@@ -45,7 +45,7 @@ while True:
     if activitat == "0":
         break
 
-    # Si no posa res, torna a preguntar
+    # Si l'usuari no posa res, torna a preguntar
     while activitat == "":
         print("Error: Has d'introduir un nom d'activitat.")
         activitat = input(f"Nom de la activitat de {nom}: ")
