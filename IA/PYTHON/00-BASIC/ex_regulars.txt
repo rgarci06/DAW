@@ -1,0 +1,13 @@
+Principals característiques de les expressions regulars:
+
+^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$
+
+- Principi: ^
+- [valors que hi poden anar inclús caràcters especials]
+- +->altre valor que controlar
+- valor clau: @ ara vindrà el domini del email
+- [valors que hi poden anar inclús caràcters especials]
+- \\. valor literal que hi ha d'anar domini superior
+- [valors]{mínim, màxim si es deixa buit és que no té un màxim}
+- $ fi de la cadena que hem de comprovar
+- \d representa qualsevol dígit decimal
