@@ -1,0 +1,2 @@
+adeu = ("adeu")
+print=(adeu)
