@@ -51,11 +51,11 @@ while True:
         activitat = input(f"Nom de la activitat de {nom}: ")
 
     # Demana la data a l'usuari
-    data_str = input(f"Data de la activitat '{activitat}' (dd/mm/yyyy): ")
+    data_usuari = input(f"Data de la activitat '{activitat}' (dd/mm/yyyy): ")
 
     # Valida la data perque estigui en fomat europeu
     try:
-        data = datetime.strptime(data_str, "%d/%m/%Y").date()
+        data = datetime.strptime(data_usuari, "%d/%m/%Y").date()
     except ValueError:
         print("Data invàlida. Torna-ho a intentar.")
         continue # Si la data es invalida, torna a començar el segon bucle
