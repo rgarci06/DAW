@@ -32,10 +32,24 @@ dies[3]="dimecres"
 dies.setdefault(3, "dijous")
 print(dies)
 
-#? per obtenir valor si no existeix clau retorna None -------------------
+#? per obtenir valor si no existeix clau retorna None, segon argument canvia None per un que vulguem -------------------
 print(dies.get("Pepito"))
+#print(dies.get("Pepito", ""))=> substitueix None per Pepito
+
+#? Poder ordenar un diccionari --------------------------------
 
 abc={"b":"2", "c":"3", "a":"1"}
 abc_ordre=dict(sorted((abc.items())))
 print(abc_ordre)
+
+# ? diccionari.update(altre_diccionari) ---------------------------------------------------------------------
+# Afegeix totes les claus i valors de altre_diccionari dins de diccionari.
+# Si una clau ja existia, el valor es sobreescriu.
+# útil per actualitzar diccionaris de classe
+
+dades = {"nom": "Xavi", "edat": 43}
+nous_valors = {"edat": 44, "ciutat": "Barcelona"}
+# paràmetre nou diccionari
+dades.update(nous_valors)
+print(dades)
 
