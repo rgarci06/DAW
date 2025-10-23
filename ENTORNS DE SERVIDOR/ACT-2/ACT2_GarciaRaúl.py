@@ -29,38 +29,48 @@ print("Data europea:", data_europea)
 # En sortir del programa mostrarà totes les activitats i les seves dates.
 # I dirà adeu a l'usuari amb el seu nom!
 
-nom=input("Posa el teu nom d'usuari: ")
-activitats=dict([])
+from datetime import datetime
+
+# Demana el nom a l'usuari
+nom = input("Posa el teu nom d'usuari: ").strip()
+
+# Aqui guardo la informació de les acttivitats
+activitats = {}
 
 while True:
+    # Demana el nom de l'activitat
+    activitat = input(f"Nom de la activitat de {nom} (0 per sortir): ")
 
-    activitat=input(f"Nom de la activitat de {nom}: ")
-
-    while activitat=="":
-        print("Error")
-        activitat=input(f"Nom de la activitat de {nom}: ")
-
+    # Si l'usuari vol sortir posa un 0
     if activitat == "0":
         break
 
-    data=input(f"Data de la activitat de {activitat} (dd/mm/yyyy): ")
+    # Si no posa res, torna a preguntar
+    while activitat == "":
+        print("Error: Has d'introduir un nom d'activitat.")
+        activitat = input(f"Nom de la activitat de {nom}: ")
 
+    # Demana la data a l'usuari
+    data_str = input(f"Data de la activitat '{activitat}' (dd/mm/yyyy): ")
+
+    # Valida la data perque estigui en fomat europeu
     try:
-        data = datetime.strptime(data, "%d/%m/%Y").date()
+        data = datetime.strptime(data_str, "%d/%m/%Y").date()
     except ValueError:
-        print("La data es inválida.")
+        print("Error: La data és invàlida. Torna-ho a intentar.")
+        continue  # Torna a començar el bucle per repetir aquesta activitat
     else:
-        print("¡La data es correcta!")
+        print("La data és correcta!")
 
-    if data == "0":
-        break
+    # Guarda l'activitat al diccionari amb la seva data
+    activitats[data.strftime("%d/%m/%Y")] = activitat
 
-    activitats[data]=activitat
+# Mostra totes les activitats amb les dates y el nom d'usuari
+print("\n--- Resum d'activitats ---")
+print(f"Nom d'usuari: {nom}")
+for data, act in activitats.items():
+    print(f"- {data}: {act}")
 
+print(f"\nAdéu {nom}!")
 
-print(f"""
-Nom d'usuari: {nom} 
-Datas y Noms de les activitats: {activitats}
-""")
-print(f"Adéu {nom}!")
     
