@@ -12,7 +12,7 @@ while True:
 
     hola = print(f"Hola {alies}, ara comença el programa per desxifrar la caixa forta, bona sort! ") # Dono la benvinguda a l'usuari
 
-    for intent in range(5): # Aqui faig que els intents tenen un rang de 5 intents
+    for intent in range(1,6): # Aqui faig que els intents tenen un rang de 5 intents
         adivinar = int(input("Escriu el numero (1 al 99 o possa 0 per sorir): ")) # Faig un input perque l'usuari posi el numero per desxifrar
         numeros_posats = numero_intentat.append(adivinar)
 
