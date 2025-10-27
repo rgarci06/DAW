@@ -13,11 +13,11 @@ while True:
     hola = print(f"Hola {alies}, ara comença el programa per desxifrar la caixa forta, bona sort! ") # Dono la benvinguda a l'usuari
 
     for intent in range(5): # Aqui faig que els intents tenen un rang de 5 intents
-        adivinar = int(input("Escriu el numero (1 al 99, 0 per sorir) : ")) # Faig un input perque l'usuari posi el numero per desxifrar
+        adivinar = int(input("Escriu el numero (1 al 99 o possa 0 per sorir): ")) # Faig un input perque l'usuari posi el numero per desxifrar
         numeros_posats = numero_intentat.append(adivinar)
 
         if adivinar == 0: # Aqui faig que si el numero que posa el 0 surti del programa dient que a encertat el numero per mostar un altre missatge
-            correcte = True
+            correcte = False 
             break
 
         elif adivinar == numero_secret: # Aqui faig que si l'usuari encerta el codi pasi a correcte perque mostri un missatge i surti del codi
@@ -34,7 +34,7 @@ while True:
 
     if not correcte: # Aqui faig que si no encerta el codi surti aquest missatge
         print("")
-        print(f"Has fet tots el intents, ha saltat l'alarma!. La policia va a per tu, corre!")
+        print(f"Adeu, has fet tots el intents, ha saltat l'alarma!. La policia va a per tu, corre!")
         print(f"""\n----Resultats----
 - Has possat aquests numeros, {numero_intentat}""")
         break
@@ -46,12 +46,5 @@ while True:
 
         print(f"""\n----Resultats----
 - El numero de la caixa forta era: {numero_secret}
-- Has possat aquests numeros, {numero_intentat}""")
-        break
-
-    if adivinar == 0: # I per ultim que si el numero que posa es 0 surti del programa amb un misstge
-        print("")
-        print(f"Adeu {alies}, t'ho has pensat millor i no vols problemes amb el banc Sabadell")
-        print(f"""\n----Resultats----
 - Has possat aquests numeros, {numero_intentat}""")
         break
