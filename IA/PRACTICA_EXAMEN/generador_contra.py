@@ -40,9 +40,12 @@ def generar_contraseña(longitud):
     return "".join(contraseña)
 
 while True:
-    longitud = int(input("Dime la longitud de la contraseña (mínimo 8): "))
+    longitud = int(input("Dime la longitud de la contraseña (mínimo 8, maximo 100): "))
     if longitud < 8:
         print("La contraseña debe tener al menos 8 caracteres.")
+        continue
+    if longitud > 100:
+        print("La contraseña es demasiado larga, inutil.")
         continue
 
     print("Tu contraseña es:", generar_contraseña(longitud))
