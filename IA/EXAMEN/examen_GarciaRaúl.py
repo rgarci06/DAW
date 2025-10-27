@@ -1,6 +1,6 @@
 import random
 
-numero_secret = random.randint(1,99) # Aqui utilitzo el random.randint perque es el que fa que agafi un numero aleatori entre 1 i 99
+numero_secret = random.randint(1,5) # Aqui utilitzo el random.randint perque es el que fa que agafi un numero aleatori entre 1 i 99
 correcte = False # Aqui dic que el numero secret es false perque en cara no l'ha encertat
 
 while True:
@@ -18,7 +18,7 @@ while True:
             correcte = True
             break
 
-        if adivinar == numero_secret: # Aqui faig que si el numero que posa es el correcte mostri un missatge i surti del bucle
+        elif adivinar == numero_secret: # Aqui faig que si el numero que posa es el correcte mostri un missatge i surti del bucle
             correcte = True
             break
 
