@@ -18,7 +18,7 @@ while True:
             correcte = True
             break
 
-        elif adivinar == numero_secret: # Aqui faig que si el numero que posa es el correcte mostri un missatge i surti del bucle
+        elif adivinar == numero_secret: # Aqui faig que si l'usuari encerta el codi pasi a correcte perque mostri un missatge i surti del codi
             correcte = True
             break
 
@@ -34,7 +34,7 @@ while True:
         print(f"Has fet tots el intents, ha saltat l'alarma!. La policia va a per tu, corre!")
         break
 
-    if correcte:
+    if correcte: # Aqui faig que si l'usuari encerta el codi surti aquest missatge
         print("Correcte, has desbloquejat la caixa forta!")
         break
 
