@@ -17,7 +17,6 @@ productos={}
 for i in range(2):
     producto=input("Nombre del producto ")
     precio=int(input("Precio del producto "))
-    #productos es el diccionario, "producto" es la calu(keys), "precio" es el valor(values)
     productos[producto]=precio
     print(f"Llista de la compra: {productos}")
     i += 1
