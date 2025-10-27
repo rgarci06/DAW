@@ -34,7 +34,7 @@ while True:
 
     if not correcte: # Aqui faig que si no encerta el codi surti aquest missatge
         print("")
-        print(f"Adeu, has fet tots el intents, ha saltat l'alarma!. La policia va a per tu, corre!")
+        print(f"Adeu {alies}, has fet tots el intents, ha saltat l'alarma!. La policia va a per tu, corre!")
         print(f"""\n----Resultats----
 - Has possat aquests numeros, {numero_intentat}""")
         break
@@ -42,7 +42,7 @@ while True:
     if correcte: # Aqui faig que si l'usuari encerta el codi surti aquest missatge
         print("")
         print("Correcte, has desbloquejat la caixa forta!")
-        print("Adeu, has tingut sort!")
+        print(f"Adeu {alies}, has tingut sort!")
 
         print(f"""\n----Resultats----
 - El numero de la caixa forta era: {numero_secret}
