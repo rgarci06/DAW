@@ -19,21 +19,22 @@ def main():
 
         opcio = input("Escull una opció: ")
 
-        if opcio == "1":
-            quantitat = float(input("Quant vols ingressar (€): "))
-            compte.ingressar(quantitat)
-        elif opcio == "2":
-            quantitat = float(input("Quant vols retirar (€): "))
-            compte.retirar(quantitat)
-        elif opcio == "3":
-            compte.veure_saldo()
-        elif opcio == "4":
-            compte.veure_dades()
-        elif opcio == "5":
-            print("Sortint del compte...")
-            break
-        else:
-            print("Opció no vàlida. Torna-ho a provar.")
+        match opcio:
+            case "1":
+                quantitat = float(input("Quant vols ingressar (€): "))
+                compte.ingressar(quantitat)
+            case "2":
+                quantitat = float(input("Quant vols retirar (€): "))
+                compte.retirar(quantitat)
+            case "3":
+                compte.veure_saldo()
+            case "4":
+                compte.veure_dades()
+            case "5":
+                print("Sortint del compte...")
+                break
+            case _:
+                print("Opció no vàlida. Torna-ho a provar.")
 
 if __name__ == "__main__":
     main()
