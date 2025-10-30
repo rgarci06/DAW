@@ -11,6 +11,7 @@
 #Veure Saldo
 #Les dades generals del compte amb el saldo
 #El document ha d'estar amb un fitxer cc_cognoms.py i aquest ha de funcionar per main.
+
 import random
 class CompteCorrent:
 
