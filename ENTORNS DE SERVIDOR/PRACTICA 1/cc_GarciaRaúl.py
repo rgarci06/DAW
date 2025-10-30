@@ -17,7 +17,7 @@ class CompteCorrent:
     _seguent_id = 1
 
     def __init__(self, dni: str, nom: str, cognoms: str, saldo_inicial: float):
-        self.__id = CompteCorrent._seguent_id
+        self.__id = CompteCorrent._seguent_id #    self.__id = random.randint(1,100000000000000000000000)
         CompteCorrent._seguent_id += 1
         self.__num_compte = random.randint(1_000_000_000, 9_999_999_999)
         self.__dni = dni
