@@ -19,7 +19,7 @@ class CompteCorrent:
     _seguent_id = 1
     # Aqui el que faig es definir una variable amb el que l'usuari a d'omplir, el dni, el nom i cognoms i el saldo
     def __init__(self, dni: str, nom: str, cognoms: str, saldo_inicial: float):
-        self.__id = CompteCorrent._seguent_id #    self.__id = random.randint(1,100000000000000000000000)
+        self.__id = CompteCorrent._seguent_id
         CompteCorrent._seguent_id += 1
         self.__num_compte = random.randint(1_000_000_000, 9_999_999_999)
         self.__dni = dni # Aqui defineixo els selfs per poder utilitzarlos al main.py
