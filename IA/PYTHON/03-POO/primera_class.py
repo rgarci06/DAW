@@ -14,6 +14,7 @@ class Persona:
     ID=0
 
     # definim constructor (paràmetres que hem de passar aquells que no són de generació automàtica)
+    # paràmetres predefinits sempre han d'anar al final
     def __init__(self, nom: str, cognoms: str, edat: int):
         # es fa la crida de la funció a través de la nom de classe
         self.id=Persona.generarID()
@@ -31,7 +32,7 @@ class Persona:
 
     def generarDNI(self):
      while True:
-        op=int(input("Quin document tens (1)DNI o (2)NIE: "))
+        op=int(input("Quin document tens (1)DNI o (2)NIE (0)EXIT: "))
         match op:
             case 1:
               dni=input("Introdueix DNI: ")
@@ -48,6 +49,9 @@ class Persona:
                  return nie
                if not validacio:
                  print("Error en NIE")
+            case 0:
+                print("Exit")
+                break
             case _:
                 print("Error en opció!")
     
@@ -60,4 +64,7 @@ if __name__ == "__main__":
     p1=Persona("James", "Hetfield", 62)
     print(p1)
     p2=Persona("Brian", "Adams", 65)
+    # canviem la propietat nom
+    p2.nom="Bon Jovi"
     print(p2)
+    
