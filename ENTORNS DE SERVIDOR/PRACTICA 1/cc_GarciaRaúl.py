@@ -50,5 +50,5 @@ class CompteCorrent:
         print(f"Numero del compte: {self.__num_compte}")
         print(f"DNI: {self.__dni}")
         print(f"Nom del titular: {self.__nom} {self.__cognoms}")
-        print(f"Saldo actual: {self.__saldo}")
+        print(f"Saldo actual: {self.__saldo}€")
         print("------------------------------")
