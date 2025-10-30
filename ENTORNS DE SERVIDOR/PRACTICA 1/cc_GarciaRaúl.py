@@ -10,24 +10,45 @@
 #Retirada d'efectiu
 #Veure Saldo
 #Les dades generals del compte amb el saldo
+#El document ha d'estar amb un fitxer cc_cognoms.py i aquest ha de funcionar per main.
 import random
-class cuenta:
+class CompteCorrent:
 
-    __ID=0
-    __num_compte=0
+    _seguent_id = 1
 
-    def __init__(self, DNI: int, nom: str, cognoms: str, salari: int):
-        cuenta.__ID =+1
-        cuenta.__num_compte = random.randint(0,9999999999)
-        self.__DNI = DNI
+    def __init__(self, dni: str, nom: str, cognoms: str, saldo_inicial: float):
+        self.__id = CompteCorrent._seguent_id
+        CompteCorrent._seguent_id += 1
+        self.__num_compte = random.randint(10_000_000_000, 99_999_999_999)
+        self.__dni = dni
         self.__nom = nom
         self.__cognoms = cognoms
-        self.__salari = salari
-        
-    @property
-    def nom(self):
-        return self.__nom
-    
-    @nom.setter
-    def nom(self, nom):
-        self.__nom = nom
+        self.__saldo = float(saldo_inicial)
+
+    def ingressar(self, quantitat):
+        if quantitat > 0:
+            self.__saldo += quantitat
+            print(f"S'han ingressat {quantitat}€. El teu saldo és: {self.__saldo}")
+        else:
+            print("La quantitat no es correcte.")
+
+    def retirar(self, quantitat):
+        if quantitat > self.__saldo:
+            print("No tens saldo")
+        elif quantitat <= 0:
+            print("La quantitat no es correcte.")
+        else:
+            self.__saldo -= quantitat
+            print(f"S'han retirat {quantitat}€. El teu saldo es: {self.__saldo}")
+
+    def veure_saldo(self):
+        print(f"Saldo actual: {self.__saldo}")
+
+    def veure_dades(self):
+        print("---- DADES DEL TEU COMPTE ----")
+        print(f"ID del compte: {self.__id}")
+        print(f"Numero del compte: {self.__num_compte}")
+        print(f"DNI: {self.__dni}")
+        print(f"Nom del titular: {self.__nom} {self.__cognoms}")
+        print(f"Saldo actual: {self.__saldo}")
+        print("------------------------------")
