@@ -30,7 +30,7 @@ def main():
         elif opcio == "4":
             compte.veure_dades()
         elif opcio == "5":
-            print("Sortint del programa...")
+            print("Sortint de la compta")
             break
         else:
             print("Opció no vàlida. Torna-ho a provar.")
