@@ -1,7 +1,7 @@
 from cc_GarciaRaúl import CompteCorrent
 
 def main():
-    print("=== CREACIÓ DE COMPTE CORRENT ===")
+    print("--- CREAR COMPTE CORRENT ---")
     dni = input("Introdueix el DNI: ")
     nom = input("Introdueix el nom: ").capitalize()
     cognoms = input("Introdueix els cognoms: ").capitalize()
@@ -30,7 +30,7 @@ def main():
         elif opcio == "4":
             compte.veure_dades()
         elif opcio == "5":
-            print("Sortint de la compta")
+            print("Sortint del compte...")
             break
         else:
             print("Opció no vàlida. Torna-ho a provar.")
