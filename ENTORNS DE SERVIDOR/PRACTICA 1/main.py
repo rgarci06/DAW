@@ -4,9 +4,9 @@ from cc_GarciaRaúl import CompteCorrent # Aqui importo la classe del meu arxiu 
 def main(): # Defineixo una variable main amb el que vull que s'executi
     # Aqui faig prints perque l'usuari ompli els camps que demana
     print("--- CREAR COMPTE CORRENT ---")
-    while True:
+    while True: # Aqui el que faig es fer que l'usuari només pugui esciure 8 numeros i 1 lletra en majuscula per al DNI si no ho posa bé dona un missatge de error.
         dni = input("Introdueix el DNI amb 8 números i una lletra en MAJÚSCULA: ").strip()
-        if re.fullmatch(r"\d{8}[A-Z]", dni):
+        if re.fullmatch(r"\d{8}[A-Z]", dni): # El que fa el re.fullmatch es validar si el que esciu l'usuari es correcte completament.Li dic que ha de tindre 8 numeros i una lletra de la A a la Z si no es cumpleix dona el print i si es cumpleix surt del bucle i continua el bucle.
             break
         else:
             print("DNI incorrecte. Torna-ho a provar.")
