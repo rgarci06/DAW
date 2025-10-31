@@ -1,11 +1,17 @@
+import re
 from cc_GarciaRaúl import CompteCorrent # Aqui importo la classe del meu arxiu per poderla executar aqui
 
 def main(): # Defineixo una variable main amb el que vull que s'executi
     # Aqui faig prints perque l'usuari ompli els camps que demana
     print("--- CREAR COMPTE CORRENT ---")
-    dni = input("Introdueix el DNI: ")
+    while True:
+        dni = input("Introdueix el DNI amb 8 números i una lletra en MAJÚSCULA: ").strip()
+        if re.fullmatch(r"\d{8}[A-Z]", dni):
+            break
+        else:
+            print("DNI incorrecte. Torna-ho a provar.")
     nom = input("Introdueix el nom: ").capitalize()
-    cognoms = input("Introdueix els cognoms: ").capitalize()
+    cognoms = input("Introdueix els cognoms: ").title()
     saldo_inicial = float(input("Introdueix el saldo inicial (€): "))
 
     compte = CompteCorrent(dni, nom, cognoms, saldo_inicial) # Això es el que vull que l'usuari ompli
