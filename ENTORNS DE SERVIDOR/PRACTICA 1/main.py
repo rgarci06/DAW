@@ -1,4 +1,4 @@
-from cc_GarciaRaúl import CompteCorrent # Aqui importo la classe del meu arxiu per poderla executar aqui
+from cc_GarciaRaúl import CompteCorrent # Aqui importo la classe del altre arxiu per poderla executar aqui
 
 def main(): # Defineixo la funció principal amb tot el codi dins
     while True: # Amb aquest bucle puc fer que l'usuari pugui fer mes comptes quan surti del programa
