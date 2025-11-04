@@ -6,7 +6,7 @@ class CompteCorrent:
     def __init__(self, dni: str, nom: str, cognoms: str, saldo_inicial: float):
         self.__id = CompteCorrent._seguent_id
         CompteCorrent._seguent_id += 1
-        self.__num_compte = random.randint(1_000_000_000, 9_999_999_999)
+        self.__num_compte = random.randint(1_000_000_000, 9_999_999_999)    
         self.__dni = dni # Aqui defineixo els selfs per poder utilitzarlos al main.py
         self.__nom = nom
         self.__cognoms = cognoms
