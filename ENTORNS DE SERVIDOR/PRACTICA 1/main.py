@@ -25,7 +25,7 @@ def main(): # Defineixo la funció principal amb tot el codi dins
             print("5. Sortir")
             opcio = input("Escull una opció: ")
 
-            match opcio:
+            match opcio: # Aixo es un cas per a cada opcio del menu
                 case "1":
                     quantitat = float(input("Quant vols ingressar (€): ")) 
                     compte.ingressar(quantitat)
