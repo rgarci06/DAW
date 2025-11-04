@@ -15,8 +15,8 @@
     // Valida si el campo está vacío
     if (username === '') {
       alert('El nombre de usuario no puede estar vacío.');
-    } else if (email === '') {
-      alert('El email no puede estar vacío.');
+    } else if (!validateEmail(email)) {
+      alert('El email no tiene un formato válido.');
     } else if (password === '') {
       alert('La contraseña no puede estar vacía.');
     } else {
@@ -25,3 +25,8 @@
       form.submit(); // O cualquier otra lógica que necesites
     }
   });
+  
+function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(email).toLowerCase());
+}
