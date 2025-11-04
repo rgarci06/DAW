@@ -26,6 +26,31 @@ class CompteCorrent:
         self.__nom = nom
         self.__cognoms = cognoms
         self.__saldo = float(saldo_inicial)
+
+    @property
+    def id(self):
+        return self.__id
+
+    @property
+    def num_compte(self):
+        return self.__num_compte
+
+    @property
+    def dni(self):
+        return self.__dni
+
+    @property
+    def nom(self):
+        return self.__nom
+
+    @property
+    def cognoms(self):
+        return self.__cognoms
+
+    @property
+    def saldo(self):
+        return self.__saldo
+           
     # Aqui defineixo una variable per poder ingressar diners dient que si la quantitat que vull afegir es major a 0 s'afegeixi al teu salari, i si la quantitat es negativa dona un avis.
     def ingressar(self, quantitat):
         if quantitat > 0:
