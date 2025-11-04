@@ -11,7 +11,7 @@ class CompteCorrent:
         self.__nom = nom
         self.__cognoms = cognoms
         self.__saldo = float(saldo_inicial)
-    # El que fan tots aquests properties es retornar el valor de la variable corresponent
+    # El que fan tots aquests properties i setters es retornar el valor de la variable corresponent
     @property
     def id(self):
         return self.__id
