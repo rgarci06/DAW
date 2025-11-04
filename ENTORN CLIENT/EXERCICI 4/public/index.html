@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ca"></html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,16 +7,34 @@
   <title>EXERCICI 4</title>
 </head>
 <body>
-  <form action="/submit" method="POST">
+  <form id="registro" action="/submit" method="POST" novalidate>
     <h1>REGISTRE</h1>
     <h3>Aquest formulari es per poder registrarte</h3>
 
-    Nom: <input type="text" name="nom" placeholder="Raúl" required><br>
-    Cognoms: <input type="text" name="cognoms" placeholder="Garcia Magro" required><br>
-    Email: <input type="email" name="email" placeholder="rgarci@insdanielblanxart.cat" required><br>
-    Contrasenya: <input type="password" name="contrasenya" placeholder="Contrasenya" required><br>
+    <label>
+      Nom d'usuari:
+      <input id="usuari" type="text" name="nom" placeholder="Raúl">
+      <span class="error" id="usuariError" aria-live="polite"></span>
+    </label>
+    <br>
+
+    <label>
+      Email:
+      <input id="email" type="email" name="email" placeholder="rgarci@insdanielblanxart.cat">
+      <span class="error" id="emailError" aria-live="polite"></span>
+    </label>
+    <br>
+
+    <label>
+      Contrasenya:
+      <input id="password" type="password" name="contrasenya" placeholder="Contrasenya">
+      <span class="error" id="passwordError" aria-live="polite"></span>
+    </label>
+    <br>
 
     <button type="submit">Registrar-te</button>
   </form>
+
+  <script src="./script.js"></script>
 </body>
 </html>
