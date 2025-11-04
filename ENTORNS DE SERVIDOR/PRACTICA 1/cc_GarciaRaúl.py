@@ -26,11 +26,11 @@ class CompteCorrent:
         self.__nom = nom
         self.__cognoms = cognoms
         self.__saldo = float(saldo_inicial)
-
+    # El que fan tots aquests properties es retornar el valor de la variable corresponent
     @property
     def _seguent_id(self):
         return self.__id
-
+    
     @property
     def num_compte(self):
         return self.__num_compte
