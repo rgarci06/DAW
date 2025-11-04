@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Aqui faig el fons i que el text estigui centrat */
+body {
+  background-color: #f0f4f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Aqui faig el contenidor on esta el registre */
+form {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 350px;
+}
+
+/* Aqui faig el color dels titols i els centro*/
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #333333;
+}
+
+h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: normal;
+  color: #555555;
+}
+
+/* Aqui modifico els inputs */
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  transition: border 0.3s;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+/* Aqui modifico els botons */
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007BFF;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* I per últim faig els espais entre inputs */
+br {
+  margin-bottom: 10px;
+}
