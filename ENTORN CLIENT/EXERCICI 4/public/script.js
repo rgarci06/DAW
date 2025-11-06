@@ -29,7 +29,6 @@ form.addEventListener('submit', function(event) {
     return;
   }
 
-  // Si arriba aquí, es pot enviar el formulari
   alert("Registre correcte!");
   form.submit();
 });
