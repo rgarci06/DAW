@@ -1,32 +1,40 @@
-  const form = document.getElementById('registro');
-  const usernameInput = document.getElementById('usuari');
-  const emailInput = document.getElementById('email');
-  const passwordInput = document.getElementById('password');
+const form = document.getElementById('registre');
+const username = document.getElementById('usuari');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
+const password2 = document.getElementById('password2');
+const termes = document.getElementById('termes');
 
-  document.getElementById('registro').addEventListener('submit', function(event) {
-    // Previene el envío del formulario por defecto
-    event.preventDefault();
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
 
-    // Obtiene el valor del input y elimina los espacios en blanco
-    const username = usernameInput.value.trim();
-    const email = emailInput.value.trim();
-    const password = passwordInput.value.trim();
+  if (username.value.trim() === '') {
+    alert("El nom d'usuari no pot estar buit.");
+    return;
+  }
+  if (!validateEmail(email.value.trim())) {
+    alert("El correu electrònic no té un format vàlid.");
+    return;
+  }
+  if (password.value.length < 8) {
+    alert("La contrasenya ha de tenir almenys 8 caràcters.");
+    return;
+  }
+  if (password.value !== password2.value) {
+    alert("Les contrasenyes no coincideixen.");
+    return;
+  }
+  if (!termes.checked) {
+    alert("Has d'acceptar els termes i condicions.");
+    return;
+  }
 
-    // Valida si el campo está vacío
-    if (username === '') {
-      alert('El nombre de usuario no puede estar vacío.');
-    } else if (!validateEmail(email)) {
-      alert('El email no tiene un formato válido.');
-    } else if (password === '') {
-      alert('La contraseña no puede estar vacía.');
-    } else {
-      // Si no está vacío, puedes enviar el formulario
-      alert('¡Nombre de usuario válido!');
-      form.submit(); // O cualquier otra lógica que necesites
-    }
-  });
-  
+  // Si arriba aquí, es pot enviar el formulari
+  alert("Registre correcte!");
+  form.submit();
+});
+
 function validateEmail(email) {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(String(email).toLowerCase());
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return re.test(String(email).toLowerCase());
 }

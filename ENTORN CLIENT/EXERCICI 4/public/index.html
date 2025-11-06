@@ -1,35 +1,40 @@
 <!DOCTYPE html>
-<html lang="ca"></html>
+<html lang="ca">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style.css">
-  <title>EXERCICI 4</title>
+  <title>Registre</title>
 </head>
 <body>
-  <form id="registro" action="/submit" method="POST" novalidate>
+  <form id="registre" action="/submit" method="POST" novalidate>
     <h1>REGISTRE</h1>
-    <h3>Aquest formulari es per poder registrarte</h3>
-
     <label>
       Nom d'usuari:
       <input id="usuari" type="text" name="nom" placeholder="Raúl">
     </label>
     <br>
-
     <label>
-      Email:
-      <input id="email" type="email" name="email" placeholder="rgarci@insdanielblanxart.cat">
+      Correu electrònic:
+      <input id="email" type="email" name="email" placeholder="exemple@corre.cat">
     </label>
     <br>
-
     <label>
       Contrasenya:
       <input id="password" type="password" name="contrasenya" placeholder="Contrasenya">
     </label>
     <br>
-
-    <button type="submit">Registrar-te</button>
+    <label>
+      Confirma la contrasenya:
+      <input id="password2" type="password" name="confirmar_contrasenya" placeholder="Confirma la contrasenya">
+    </label>
+    <br>
+    <label>
+      <input id="termes" type="checkbox" name="termes">
+      Accepto els termes i condicions
+    </label>
+    <br>
+    <button type="submit">Registrar-se</button>
   </form>
 
   <script src="./script.js"></script>
