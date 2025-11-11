@@ -10,7 +10,7 @@ document.getElementById('registre').addEventListener('submit', function(event) {
   const password2 = document.getElementById('password2').value;
   const termes    = document.getElementById('termes').checked;
 
-  // Validació: nom i cognoms amb majúscula inicial
+  // Validació de la lletra majuscula inicial en nom i cognoms
   const regexNom = /^[A-Z][a-z]+$/;
   if (!nom.match(regexNom) || !cognom1.match(regexNom) || !cognom2.match(regexNom)) {
     event.preventDefault();
@@ -18,28 +18,28 @@ document.getElementById('registre').addEventListener('submit', function(event) {
     return;
   }
 
-  // Correu electrònic simple
+  // Validació: correu electrònic
   if (!email.match(/^[a-zA-Z]+@[a-zA-Z]+\.[a-zA-Z]{2,}$/)) {
     event.preventDefault();
     alert('Escriu un correu vàlid.');
     return;
   }
 
-  // Telèfon: 9 xifres, comença per 6-9
+  // Validació: telèfon 9 xifres que comenci per 6,7,8 o 9
   if (!telefon.match(/^[6-9]\d{2}[\s-]?\d{3}[\s-]?\d{3}$/)) {
     event.preventDefault();
     alert('Telèfon: 9 xifres començant per 6, 7, 8 o 9.');
     return;
   }
 
-  // Data de naixement: dd/mm/aaaa
+  // Validació: data de naixement dd/mm/aaaa
   if (!data.match(/^\d{2}\/\d{2}\/\d{4}$/)) {
     event.preventDefault();
     alert('Format data: dd/mm/aaaa');
     return;
   }
 
-  // Targeta de crèdit: 16 xifres, accepta espai o guió
+  // Validació: targeta de crèdit 16 xifres, accepta espai o guió
   if (!tarjeta.match(/^\d{4}[-\s]?\d{4}[-\s]?\d{4}[-\s]?\d{4}$/)) {
     event.preventDefault();
     alert('Targeta: 16 xifres. Format correcta!');
