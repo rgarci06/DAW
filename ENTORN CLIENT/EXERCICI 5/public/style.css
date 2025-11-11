@@ -9,7 +9,6 @@ body {
   justify-content: center;
 }
 
-/* Form horizontal ancho tipo card */
 form {
   background: #fff;
   border: 1.5px solid #dbeafe;
@@ -26,7 +25,6 @@ form {
   justify-content: space-between;
 }
 
-/* Título amplio */
 h1 {
   width: 100%;
   font-size: 2em;
@@ -40,7 +38,6 @@ h1 {
   padding-bottom: 8px;
 }
 
-/* Bloque campo (label + input) estilo fila-horizontal */
 label {
   flex: 1 1 320px;
   display: flex;
@@ -53,7 +50,6 @@ label {
   margin-bottom: 10px;
 }
 
-/* Input amplio */
 input[type="text"],
 input[type="email"],
 input[type="password"] {
@@ -74,7 +70,6 @@ input[type="password"]:focus {
   box-shadow: 0 0 12px #3388cc2c;
 }
 
-/* Validación colores */
 input:valid { border-color: #64bc4b; }
 input:invalid { border-color: #f57c59; }
 
@@ -84,7 +79,6 @@ input[type="checkbox"] {
   transform: scale(1.25);
 }
 
-/* Botón con volumen */
 button[type="submit"] {
   width: 100%;
   background: linear-gradient(90deg, #227acc 40%, #6ad7f7 100%);
@@ -107,7 +101,6 @@ button[type="submit"] {
   justify-content: center;
 }
 
-/* Contenedor ancho y moderno tipo card */
 form {
   background: #fff;
   border: 2.5px solid #294C60;
@@ -149,7 +142,6 @@ label {
   letter-spacing: 0.2px;
 }
 
-/* Inputs amplios y distinguidos */
 input[type="text"],
 input[type="email"],
 input[type="password"] {
@@ -209,12 +201,10 @@ button[type="submit"]:focus {
   box-shadow: 0 11px 48px #FFA63037;
 }
 
-/* Campos a toda anchura */
 .full-width {
   grid-column: 1 / -1;
 }
 
-/* Responsive: en móvil una columna y padding reducido */
 @media (max-width: 900px) {
   form {
     grid-template-columns: 1fr;
