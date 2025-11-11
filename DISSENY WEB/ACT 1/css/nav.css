@@ -1,0 +1,6 @@
+header {
+    background-color: var(--oxford-blue);
+    color: var(--french-gray);
+    text-align: center;
+    padding: 1rem;
+}
