@@ -1,14 +1,14 @@
 document.getElementById('registre').addEventListener('submit', function(event) {
-  const nom       = document.getElementById('usuari').value.trim();
-  const cognom1   = document.getElementById('cognom1').value.trim();
-  const cognom2   = document.getElementById('cognom2').value.trim();
-  const email     = document.getElementById('email').value.trim();
-  const telefon   = document.getElementById('telefon').value.trim();
-  const data      = document.getElementById('data').value.trim();
-  const tarjeta   = document.getElementById('tarjeta').value.trim();
-  const password  = document.getElementById('password').value;
+  const nom = document.getElementById('usuari').value.trim();
+  const cognom1 = document.getElementById('cognom1').value.trim();
+  const cognom2 = document.getElementById('cognom2').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const telefon = document.getElementById('telefon').value.trim();
+  const data = document.getElementById('data').value.trim();
+  const tarjeta = document.getElementById('tarjeta').value.trim();
+  const password = document.getElementById('password').value;
   const password2 = document.getElementById('password2').value;
-  const termes    = document.getElementById('termes').checked;
+  const termes = document.getElementById('termes').checked;
 
   // Validació de la lletra majuscula inicial en nom i cognoms
   const regexNom = /^[A-Z][a-z]+$/;
