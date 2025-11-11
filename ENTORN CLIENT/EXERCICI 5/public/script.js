@@ -10,63 +10,58 @@ document.getElementById('registre').addEventListener('submit', function(event) {
   const password2 = document.getElementById('password2').value;
   const termes    = document.getElementById('termes').checked;
 
-  const regexNom = /^[A-Z][a-zàèéíòóúçñü']+$/;
-
-  if (!nom.match(regexNom)) {
+  // Validació: nom i cognoms amb majúscula inicial
+  const regexNom = /^[A-Z][a-z]+$/;
+  if (!nom.match(regexNom) || !cognom1.match(regexNom) || !cognom2.match(regexNom)) {
     event.preventDefault();
-    alert('El nom ha de començar amb majúscula i només pot contenir lletres.');
-    return;
-  }
-  if (!cognom1.match(regexNom)) {
-    event.preventDefault();
-    alert('El primer cognom ha de començar amb majúscula i només pot contenir lletres.');
-    return;
-  }
-  if (!cognom2.match(regexNom)) {
-    event.preventDefault();
-    alert('El segon cognom ha de començar amb majúscula i només pot contenir lletres.');
+    alert('Omple el nom i cognoms amb majúscula inicial.');
     return;
   }
 
+  // Correu electrònic simple
   if (!email.match(/^[a-zA-Z]+@[a-zA-Z]+\.[a-zA-Z]{2,}$/)) {
     event.preventDefault();
-    alert('Introdueix un correu electrònic vàlid (nom@domini.extensió).');
+    alert('Escriu un correu vàlid.');
     return;
   }
 
+  // Telèfon: 9 xifres, comença per 6-9
   if (!telefon.match(/^[6-9]\d{2}[\s-]?\d{3}[\s-]?\d{3}$/)) {
     event.preventDefault();
-    alert('El número de telèfon ha de tenir 9 dígits, començar per 6, 7, 8 o 9. Pots utilitzar espais o guions.');
+    alert('Telèfon: 9 xifres començant per 6, 7, 8 o 9.');
     return;
   }
 
-  if (!data.match(/^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/)) {
+  // Data de naixement: dd/mm/aaaa
+  if (!data.match(/^\d{2}\/\d{2}\/\d{4}$/)) {
     event.preventDefault();
-    alert('La data de naixement ha de tenir el format dd/mm/aaaa, dia entre 01 i 31, mes entre 01 i 12, any de 4 xifres.');
+    alert('Format data: dd/mm/aaaa');
     return;
   }
 
+  // Targeta de crèdit: 16 xifres, accepta espai o guió
   if (!tarjeta.match(/^\d{4}[-\s]?\d{4}[-\s]?\d{4}[-\s]?\d{4}$/)) {
     event.preventDefault();
-    alert('La targeta de crèdit ha de tenir el format XXXX-XXXX-XXXX-XXXX o XXXX XXXX XXXX XXXX.');
+    alert('Targeta: 16 xifres. Format correcta!');
     return;
   }
 
-  if (!password.match(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[\W_]).{8,}$/)) {
+  // Contrasenya mínima: 8 caràcters
+  if (password.length < 8) {
     event.preventDefault();
-    alert('La contrasenya ha de tenir mínim 8 caràcters, una majúscula, una minúscula, un número i un caràcter especial.');
+    alert('La contrasenya ha de tenir 8 caràcters.');
     return;
   }
-
   if (password !== password2) {
     event.preventDefault();
     alert('Les contrasenyes no coincideixen.');
     return;
   }
 
+  // Accepta termes
   if (!termes) {
     event.preventDefault();
-    alert('Has d\'acceptar els termes i condicions per registrar-te.');
+    alert('Accepta els termes per continuar.');
     return;
   }
 });
