@@ -1,0 +1,33 @@
+header {
+    background-color: var(--oxford-blue);
+    color: var(--french-gray);
+    text-align: center;
+    padding: 1rem 2rem;
+    top: 0;
+    z-index: 100;
+}
+
+header nav ul {
+    list-style-type: none;
+    color: var(--french-gray);
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+header nav ul li a {
+    color: var(--french-gray);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer {
+    background-color: var(--oxford-blue);
+    color: var(--french-gray);
+    text-align: center;
+    padding: 1rem;
+}
