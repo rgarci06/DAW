@@ -1,0 +1,2 @@
+Aquesta es la primera linia del fitxer.
+Aquesta es la segona linia del fitxer.

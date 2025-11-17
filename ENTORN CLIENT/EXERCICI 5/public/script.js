@@ -42,7 +42,7 @@ document.getElementById('registre').addEventListener('submit', function(event) {
   // Validació: targeta de crèdit 16 xifres, accepta espai o guió
   if (!tarjeta.match(/^\d{4}[-\s]?\d{4}[-\s]?\d{4}[-\s]?\d{4}$/)) {
     event.preventDefault();
-    alert('Targeta: 16 xifres. Format correcta!');
+    alert('Targeta: 16 xifres.');
     return;
   }
 
