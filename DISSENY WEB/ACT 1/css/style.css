@@ -3,3 +3,17 @@
 @import url('fonts.css');
 @import url('reset.css');
 @import url('layout.css');
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-center {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+

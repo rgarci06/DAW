@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio con errores</title>
+
+  <style>
+    body {
+      font-famly: Arial, sans-serif;
+      background-colorr: #f5f5f5;
+      margin: 0
+    }
+
+    header {
+      background: #1e40af;
+      color: white;
+      padding: 16px;
+      text-aling: center;
+    }
+
+    .tarjeta {
+      boarder: 1px solid #ddd;
+      padding: 16px;
+      margin: 16px;
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .boton {
+      padding: 8px 12px;
+      background: #16a34a;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: ponter;
+    }
+
+    .oculto {
+      display: none
+  </style>
+
+</head>
+<body>
+
+  <header>
+    <h1>Ejercicio de depuración</h1>
+    <p>Esta página contiene errores en HTML, CSS y JavaScript.</p>
+  </header>
+
+  <main>
+    <section class="tarjeta">
+      <h2>Calculadora simple</h2>
+      <p>Introduce dos números para sumarlos:</p>
+
+      <label>Número 1:
+        <input type="text" id="numero1">
+      </label><br><br>
+
+      <label>Número 2:
+        <input type="text" id="numero2">
+      </label><br><br>
+
+      <button class="boton" id="btnSumar">Sumar</button>
+
+      <p>Resultado: <span id="resultadoSuma">-</span></p>
+    </section>
+
+    <section class="tarjeta">
+      <h2>Saludo dinámico</h2>
+      <p>Nombre: <input type="text" id="nombre"></p>
+      <button class="boton" id="btnSaludar">Saludar</button>
+      <p id="mensajeSaludo"></p>
+    </section>
+
+    <section class="tarjeta">
+      <h2>Lista de elementos</h2>
+      <ul id="lista">
+        <li>Elemento inicial 1
+        <li>Elemento inicial 2</li>
+      </ul>
+      <input type="text" id="nuevoElemento" placeholder="Nuevo elemento">
+      <button class="boton" id="btnAgregar">Agregar a la lista</button>
+    </section>
+
+    <section class="tarjeta">
+      <h2>Consola</h2>
+      <p>Revisa la consola del navegador (F12) para ver mensajes y errores.</p>
+    </section>
+  </main>
+
+  <script>
+    const input1 = document.getElementByID("numero1");
+    const input2 = document.getElementById("numero2");
+    const btnSumar = document.getElementById("btnSumar");
+    const spanResultado = document.getElementById("resultadoSuma");
+
+    const inputNombre = document.getElementById("nombre");
+    const btnSaludar = document.getElementById("btnSaludar");
+    const pMensajeSaludo = document.getElementById("mensajeSaludo");
+
+    const ulLista = document.getElementById("lista");
+    const inputNuevoElemento = document.getElementById("nuevoElemento");
+    const btnAgregar = document.getElementById("btnAgregar");
+
+    function sumar() {
+      const a = input1.value;
+      const b = input2.value;
+
+      if (a == "" || b = "") {
+        alert("Debes introducir los dos números");
+        return;
+      }
+
+      const resultado = a + b;
+      spanResultado.innerText = "La suma es " + resultad;
+    }
+
+    function saludar() {
+      const nombre = inputNombre.value;
+
+      if (nombre.length < 3) {
+        pMensajeSaludo.innerText = "Nombre demasiado corto";
+        return;
+      }
+
+      mensajeSaludo.innerHTML = "Hola " + nombre + "!";
+    }
+
+    function agregarElementoLista() {
+      const texto = inputNuevoElemento.value;
+
+      if (texto === "") {
+        alert("Escribe algo antes de agregar");
+      }
+
+      const li = document.createElement("li");
+      li.textContent = texto;
+      ulLista.apendChild(li);
+      inputNuevoElemento.value = "";
+    }
+
+    btnSumar.addEventListener("click", sumar);
+    btnSaludar.addEventListener("click", saludar);
+    btnAgregar.addEventListener("click", agregarElementoLista);
+
+    function mostrarEnConsola() {
+      console.log("Página cargada correctamente";
+    }
+
+    window.addEventListener("load", mostrarEnConsola);
+  </script>
+
+</body>
+</html>

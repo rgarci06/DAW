@@ -1,33 +1,83 @@
 header {
-    background-color: var(--oxford-blue);
-    color: var(--french-gray);
-    text-align: center;
-    padding: 1rem 2rem;
-    top: 0;
-    z-index: 100;
+  background: var(--rich-black);
+  color: var(--gold-accent);
+  text-align: center;
+  padding: 1rem 2rem;
+  border-bottom: 4px solid var(--gold-accent);
 }
-
 header nav ul {
-    list-style-type: none;
-    color: var(--french-gray);
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    list-style: none;
-    flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
 }
-
+header nav ul li {
+  list-style: none;
+}
 header nav ul li a {
-    color: var(--french-gray);
-    text-decoration: none;
-    font-weight: bold;
+  color: var(--gold-accent);
+  background: transparent;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.33rem 0.8rem;
+  border-radius: 7px;
+  border: 2px solid transparent;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+header nav ul li a:hover,
+header nav ul li a:focus {
+  background-color: var(--leaf-green);
+  color: var(--gold-accent);
+  border: 2px solid var(--leaf-green);
+}
+main {
+  max-width: 800px;
+  margin: 2rem auto;
+  background: rgba(35,36,41,0.78);
+  color: var(--rich-black);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 24px rgba(35,36,41,0.18);
+}
+footer {
+  background: var(--rich-black);
+  color: var(--gold-accent);
+  text-align: center;
+  padding: 1rem;
+  border-top: 2px solid var(--leaf-green);
+  margin-top: auto;
+}
+.main-center {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main > div {
+  max-width: 500px;
+  background: #fff;
+  padding: 2.5rem 2rem;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px rgba(35,36,41,0.12);
+  color: var(--rich-black);
+  text-align: center;
+}
+.cta-btn {
+  display: inline-block;
+  margin-top: 1.3rem;
+  padding: 0.6rem 1.4rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-radius: 7px;
+  background: var(--leaf-green);
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.cta-btn:hover {
+  background: var(--gold-accent);
+  color: var(--rich-black);
 }
 
-footer {
-    background-color: var(--oxford-blue);
-    color: var(--french-gray);
-    text-align: center;
-    padding: 1rem;
-}

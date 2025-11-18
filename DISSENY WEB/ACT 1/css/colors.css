@@ -1,7 +1,6 @@
 :root {
-  --oxford-blue: hsla(205, 100%, 9%, 1);
-  --charcoal: hsla(202, 40%, 27%, 1);
-  --french-gray: hsla(217, 16%, 72%, 1);
-  --orange-peel: hsla(34, 100%, 59%, 1);
-  --tyrian-purple: hsla(338, 55%, 25%, 1);
+  --rich-black: #232429;
+  --leaf-green: #5f7364;
+  --light-leaf: #78978b;
+  --gold-accent: #d4b687;
 }

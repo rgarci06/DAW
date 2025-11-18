@@ -1,15 +1,7 @@
-/* Reset básico para quitar márgenes por defecto y usar box-sizing */
-* {
-	box-sizing: border-box;
-}
-
-html, body {
-	margin: 0;
-	padding: 0;
-}
-
-/* Opcional: evitar saltos de línea inesperados en imágenes y elementos inline-block */
-img, video {
-	display: block;
-	max-width: 100%;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
