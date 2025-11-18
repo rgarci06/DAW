@@ -2,24 +2,24 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Ejercicio con errores</title>
+  <title>Ejercicio corregido</title>
 
   <style>
     body {
-      font-famly: Arial, sans-serif;
-      background-colorr: #f5f5f5;
-      margin: 0
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
     }
 
     header {
       background: #1e40af;
       color: white;
       padding: 16px;
-      text-aling: center;
+      text-align: center;
     }
 
     .tarjeta {
-      boarder: 1px solid #ddd;
+      border: 1px solid #ddd;
       padding: 16px;
       margin: 16px;
       border-radius: 8px;
@@ -32,11 +32,12 @@
       color: white;
       border: none;
       border-radius: 4px;
-      cursor: ponter;
+      cursor: pointer;
     }
 
     .oculto {
-      display: none
+      display: none;
+    }
   </style>
 
 </head>
@@ -44,7 +45,7 @@
 
   <header>
     <h1>Ejercicio de depuración</h1>
-    <p>Esta página contiene errores en HTML, CSS y JavaScript.</p>
+    <p>Esta página contiene errores corregidos en HTML, CSS y JavaScript.</p>
   </header>
 
   <main>
@@ -75,7 +76,7 @@
     <section class="tarjeta">
       <h2>Lista de elementos</h2>
       <ul id="lista">
-        <li>Elemento inicial 1
+        <li>Elemento inicial 1</li>
         <li>Elemento inicial 2</li>
       </ul>
       <input type="text" id="nuevoElemento" placeholder="Nuevo elemento">
@@ -89,7 +90,7 @@
   </main>
 
   <script>
-    const input1 = document.getElementByID("numero1");
+    const input1 = document.getElementById("numero1");
     const input2 = document.getElementById("numero2");
     const btnSumar = document.getElementById("btnSumar");
     const spanResultado = document.getElementById("resultadoSuma");
@@ -106,13 +107,13 @@
       const a = input1.value;
       const b = input2.value;
 
-      if (a == "" || b = "") {
+      if (a === "" || b === "") {
         alert("Debes introducir los dos números");
         return;
       }
 
-      const resultado = a + b;
-      spanResultado.innerText = "La suma es " + resultad;
+      const resultado = Number(a) + Number(b);
+      spanResultado.innerText = "La suma es " + resultado;
     }
 
     function saludar() {
@@ -123,7 +124,7 @@
         return;
       }
 
-      mensajeSaludo.innerHTML = "Hola " + nombre + "!";
+      pMensajeSaludo.innerHTML = "Hola " + nombre + "!";
     }
 
     function agregarElementoLista() {
@@ -131,11 +132,12 @@
 
       if (texto === "") {
         alert("Escribe algo antes de agregar");
+        return;
       }
 
       const li = document.createElement("li");
       li.textContent = texto;
-      ulLista.apendChild(li);
+      ulLista.appendChild(li);
       inputNuevoElemento.value = "";
     }
 
@@ -144,7 +146,7 @@
     btnAgregar.addEventListener("click", agregarElementoLista);
 
     function mostrarEnConsola() {
-      console.log("Página cargada correctamente";
+      console.log("Página cargada correctamente");
     }
 
     window.addEventListener("load", mostrarEnConsola);
