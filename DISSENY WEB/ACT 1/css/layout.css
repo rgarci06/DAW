@@ -1,3 +1,4 @@
+/* Aixo es la configuració del header */
 header {
   background: var(--rich-black);
   color: var(--gold-accent);
@@ -32,6 +33,7 @@ header nav ul li a:focus {
   color: var(--gold-accent);
   border: 2px solid var(--leaf-green);
 }
+/* Aixo es la configuració del main i footer */
 main {
   max-width: 800px;
   margin: 2rem auto;
@@ -55,6 +57,7 @@ footer {
   align-items: center;
   justify-content: center;
 }
+/* Aixo es la configuració del div central */
 main > div {
   max-width: 500px;
   background: #fff;
