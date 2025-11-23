@@ -67,6 +67,13 @@ main > div {
   color: var(--rich-black);
   text-align: center;
 }
+h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--rich-black);
+  margin-bottom: 1rem;
+}
+
 .cta-btn {
   display: inline-block;
   margin-top: 1.3rem;

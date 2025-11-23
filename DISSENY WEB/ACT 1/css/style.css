@@ -1,7 +1,6 @@
 @import url('colors.css');
 @import url('textures.css');
 @import url('fonts.css');
-@import url('reset.css');
 @import url('layout.css');
 /* Aixo es la configuració del body per a que el footer estigui a baix */
 body {
