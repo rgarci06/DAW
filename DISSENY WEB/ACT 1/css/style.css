@@ -3,7 +3,7 @@
 @import url('fonts.css');
 @import url('reset.css');
 @import url('layout.css');
-
+/* Aixo es la configuració del body per a que el footer estigui a baix */
 body {
   min-height: 100vh;
   display: flex;
