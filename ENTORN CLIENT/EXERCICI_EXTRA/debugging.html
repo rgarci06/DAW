@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>30 Botones Debugging Combinados</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    button { margin: 5px; padding: 8px 14px; cursor: pointer; }
+    #resultado { margin-top: 20px; border: 1px solid #999; padding: 10px; min-height: 50px; }
+  </style>
+</head>
+<body>
+
+<h2>30 Botones con ejercicios de Debugging (mezclados)</h2>
+<p>Todos los botones contienen errores intencionales para depuración avanzada.</p>
+
+<div>
+<button onclick="funcion1()">Botón 1</button>
+<button onclick="funcion2()">Botón 2</button>
+<button onclick="funcion3()">Botón 3</button>
+<button onclick="funcion4()">Botón 4</button>
+<button onclick="funcion5()">Botón 5</button>
+<button onclick="funcion6()">Botón 6</button>
+<button onclick="funcion7()">Botón 7</button>
+<button onclick="funcion8()">Botón 8</button>
+<button onclick="funcion9()">Botón 9</button>
+<button onclick="funcion10()">Botón 10</button>
+<button onclick="funcion11()">Botón 11</button>
+<button onclick="funcion12()">Botón 12</button>
+<button onclick="funcion13()">Botón 13</button>
+<button onclick="funcion14()">Botón 14</button>
+<button onclick="funcion15()">Botón 15</button>
+<button onclick="funcion16()">Botón 16</button>
+<button onclick="funcion17()">Botón 17</button>
+<button onclick="funcion18()">Botón 18</button>
+<button onclick="funcion19()">Botón 19</button>
+<button onclick="funcion20()">Botón 20</button>
+<button onclick="funcion21()">Botón 21</button>
+<button onclick="funcion22()">Botón 22</button>
+<button onclick="funcion23()">Botón 23</button>
+<button onclick="funcion24()">Botón 24</button>
+<button onclick="funcion25()">Botón 25</button>
+<button onclick="funcion26()">Botón 26</button>
+<button onclick="funcion27()">Botón 27</button>
+<button onclick="funcion28()">Botón 28</button>
+<button onclick="funcion29()">Botón 29</button>
+<button onclick="funcion30()">Botón 30</button>
+
+</div>
+
+<div id="resultado">Zona de resultados</div>
+
+<script>
+
+
+function fucion1() {
+  document.getElementById("resultado").innerText = "Botón 1";
+}
+
+function funcion2() {
+  document.getElementById("resultadoo").innerText = "Botón 2";
+}
+
+function funcion3() {
+  document.getElementByID("resultado").innerText = "Botón 3";
+}
+
+function funcion4() {
+  textoResultado = "Botón 4";
+  document.getElementById("resultado").innerText = textoResultado;
+}
+
+function funcion5() {
+  let n = Math.randomm() * 10;
+  document.getElementById("resultado").innerText = n;
+}
+
+function funcion6() {
+  document.getElementById("resultado").style.colr = "red";
+}
+
+function funcion7() {
+  let fecha = new Date();
+  document.getElementById("resultado").innerText = fecha.toLocalString();
+}
+
+function funcion8() {
+  document.getElementById(resultado).innerText = "Botón 8";
+}
+
+function funcion9() {
+  document.getElementById("resultado").style.fontZise = "24px";
+}
+
+function funcion10() {
+  res.innerText = "Botón 10";
+}
+
+function funcion11() {
+  document.body.style.backgroundColor = "#fff9c";
+}
+
+function funcion12() {
+  document.body.getElementById("resultado").innerText = "Botón 12";
+}
+
+function funcion13() {
+  let texto = "Hola";
+  document.getElementById("resultado").innerText;
+}
+
+function funcion14() {
+  document.getElementById("resultado").style.setColores("blue");
+}
+
+function funcion15() {
+  let x = "10" + 5;
+  document.getElementById("resultado").innerText = x;
+}
+
+
+
+function funcion16() {
+  console.logg("Error");
+}
+
+function funcion17() {
+  let t = "hola";
+  document.getElementById("resultado").innerText = t.toUppercase();
+}
+
+function funcion18() {
+  document.getElementById("resultado").style.backgroundcolor = "yellow";
+}
+
+function funcion19() {
+  document.getElementById("resultado").innerText = numero;
+}
+
+function funcion20() {
+  let x = 5;
+  if (x = 10) {
+    document.getElementById("resultado").innerText = "x es 10";
+  }
+}
+
+function funcion21() {
+  parseInt("abc");
+  document.getElementById("resultado").innerText = resultado;
+}
+
+function funcion22() {
+  document.getElementById("resultado").innerText = Math.roundd(4.4);
+}
+
+function funcion23() {
+  let arr = [1,2,3];
+  arr.pop(4);
+  document.getElementById("resultado").innerText = arr.join(",");
+}
+
+function funcion24() {
+  document.getElementById("resultado").innerText = new Date().toISOstring();
+}
+
+function funcion25() {
+  setTimeout("mostrar()", 300);
+}
+
+function mostrar() {
+  document.getElementById("resultado").innerText = "Mostrar ejecutado";
+}
+
+function funcion26() {
+  let obj = {nombre: "Ana"};
+  document.getElementById("resultado").innerText = obj.apellido.toString();
+}
+
+function funcion27() {
+  document.getElementById("resultado").value = "Texto";
+}
+
+function funcion28() {
+  JSON.parse("{ nombre: Juan }");
+}
+
+function funcion29() {
+  let x = 10 / 0;
+  document.getElementById("resultado").innerText = x.toFixedd(2);
+}
+
+function funcion30() {
+  document.getElementById("resultado").innerText = document.getElementById(resultado);
+}
+
+</script>
+
+</body>
+</html>
