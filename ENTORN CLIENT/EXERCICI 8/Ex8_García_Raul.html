@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>15 Botones con Errores para Debugging</title>
+  <style>
+    body {
+      /* corregit: font-family (abans 'font-famly') */
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    button {
+      margin: 5px;
+      padding: 10px 15px;
+      cursor: pointer;
+    }
+    #resultado {
+      margin-top: 20px;
+      font-weight: bold;
+      padding: 10px;
+      border: 1px solid #ccc;
+      min-height: 24px;
+    }
+  </style>
+</head>
+<body>
+
+
+  <h2>15 Botones con funciones JavaScript (corregidas)</h2>
+
+  <button onclick="funcion1()">Botón 1</button>
+  <button onclick="funcion2()">Botón 2</button>
+  <button onclick="funcion3()">Botón 3</button>
+  <button onclick="funcion4()">Botón 4</button>
+  <button onclick="funcion5()">Botón 5</button>
+  <button onclick="funcion6()">Botón 6</button>
+  <button onclick="funcion7()">Botón 7</button>
+  <button onclick="funcion8()">Botón 8</button>
+  <button onclick="funcion9()">Botón 9</button>
+  <button onclick="funcion10()">Botón 10</button>
+  <button onclick="funcion11()">Botón 11</button>
+  <button onclick="funcion12()">Botón 12</button>
+  <button onclick="funcion13()">Botón 13</button>
+  <button onclick="funcion14()">Botón 14</button>
+  <button onclick="funcion15()">Botón 15</button>
+
+  <div id="resultado">Aquí aparecerán los resultados</div>
+
+  <script>
+    /* corregit: nom de la funció (abans 'fucion1') */
+    function funcion1() {
+      alert("Has presionado el botón 1");
+      document.getElementById("resultado").innerText = "Función 1 ejecutada";
+    }
+
+    /* corregit: id (abans 'resultadoo') */
+    function funcion2() {
+      document.getElementById("resultado").innerText = "Función 2 ejecutada";
+    }
+
+    /* corregit: getElementById (abans 'getElementByID') */
+    function funcion3() {
+      document.getElementById("resultado").innerText = "Función 3 ejecutada";
+      document.body.style.backgroundColor = "#e0f7fa";
+    }
+
+    /* corregit: declarar variable (abans sense 'let/const') */
+    function funcion4() {
+      let textoResultado = "Función 4 ejecutada declarando la variable correctamente";
+      document.getElementById("resultado").innerText = textoResultado;
+    }
+
+    /* corregit: Math.random (abans 'Math.randomm') */
+    function funcion5() {
+      const num = Math.random() * 100;
+      document.getElementById("resultado").innerText = "Función 5: número aleatorio = " + num;
+    }
+
+    /* corregit: style.color (abans 'style.colr') */
+    function funcion6() {
+      const resultado = document.getElementById("resultado");
+      resultado.innerText = "Función 6: texto en rojo";
+      resultado.style.color = "red";
+    }
+
+    /* corregit: toLocaleString (abans 'toLocalString') */
+    function funcion7() {
+      const fecha = new Date();
+      document.getElementById("resultado").innerText =
+        "Función 7: fecha y hora actual = " + fecha.toLocaleString();
+    }
+
+    function funcion8() {
+      document.getElementById('resultado').innerText =
+        "Función 8: texto cambiado por el botón 8 (comillas mezcladas)";
+    }
+
+    /* corregit: fontSize (abans 'fontZise') */
+    function funcion9() {
+      const resultado = document.getElementById("resultado");
+      resultado.innerText = "Función 9: tamaño de letra grande";
+      resultado.style.fontSize = "24px";
+    }
+
+    /* corregit: usar 'resultado' en lloc de 'res' (abans 'res' no existia) */
+    function funcion10() {
+      const resultado = document.getElementById("resultado");
+      resultado.innerText = "Función 10: ¡Todo funciona correctamente!";
+    }
+
+    /* corregit: color de fons hex vàlid (abans '#fff9c' incomplet) */
+    function funcion11() {
+      document.getElementById("resultado").innerText = "Función 11: Fondo amarillo";
+      document.body.style.backgroundColor = "#fff9cc";
+    }
+
+    /* corregit: cridar getElementById sobre document (abans 'document.body.getElementById') */
+    function funcion12() {
+      document.getElementById("resultado").innerText = "Función 12: ya no da error";
+    }
+
+    /* corregit: assignar innerText (abans només llegia sense assignar) */
+    function funcion13() {
+      let texto = "Nuevo texto para función 13";
+      document.getElementById("resultado").innerText = texto;
+    }
+
+    /* corregit: style.color en lloc de setColores (abans 'setColores' no existeix) */
+    function funcion14() {
+      const resultado = document.getElementById("resultado");
+      resultado.innerText = "Función 14: color canviat a negre";
+      resultado.style.color = "black";
+    }
+
+    /* corregit: convertir a número (abans numero era string "10") */
+    function funcion15() {
+      const resultado = document.getElementById("resultado");
+      let numero = 10; // número en lloc de string
+      let suma = numero + 5;
+      resultado.innerText = "Función 15: resultado de 10 + 5 = " + suma;
+    }
+  </script>
+
+</body>
+</html>

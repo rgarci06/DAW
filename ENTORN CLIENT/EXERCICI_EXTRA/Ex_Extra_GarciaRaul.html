@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Debugging Avanzado JS</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    button { margin: 5px; padding: 8px 14px; cursor: pointer; }
+    #log { margin-top: 20px; border: 1px solid #ccc; padding: 10px; min-height: 60px; white-space: pre-line; }
+    .ejercicio { margin-top: 20px; padding: 10px; border: 1px dashed #aaa; }
+    h2 { margin-bottom: 0; }
+    small { color: #555; }
+  </style>
+</head>
+<body>
+  <h1>Debugging Avanzado – JavaScript</h1>
+  <p>Abre la consola del navegador (F12 → pestaña Console) y prueba cada botón. Cada ejercicio tiene al menos un bug sutil.</p>
+
+  <div id="log">Salida de los ejercicios…</div>
+
+
+  <div class="ejercicio">
+    <h2>Ejercicio 1 – setTimeout y bucles</h2>
+    <small>Objetivo esperado: mostrar los números 0,1,2,3,4 con retraso.</small><br/>
+    <button onclick="ej1()">Ejecutar Ejercicio 1</button>
+  </div>
+
+
+  <div class="ejercicio">
+    <h2>Ejercicio 2 – this en manejadores de eventos</h2>
+    <small>Objetivo esperado: el botón cambia SOLO su propio texto.</small><br/>
+    <!-- corregit: afegit id al botó perquè document.getElementById funcioni (abans: cap id) -->
+    <button id="btn-ej2">Ejecutar Ejercicio 2</button>
+  </div>
+
+ 
+  <div class="ejercicio">
+    <h2>Ejercicio 3 – Mutación de arrays</h2>
+    <small>Objetivo esperado: mantener intacto el array original.</small><br/>
+    <button onclick="ej3()">Ejecutar Ejercicio 3</button>
+  </div>
+
+  <div class="ejercicio">
+    <h2>Ejercicio 4 – Promesas y manejo de errores</h2>
+    <small>Objetivo esperado: capturar correctamente el error.</small><br/>
+    <button onclick="ej4()">Ejecutar Ejercicio 4</button>
+  </div>
+
+ 
+  <div class="ejercicio"></div>
+    <h2>Ejercicio 5 – async/await y return</h2>
+    <small>Objetivo esperado: mostrar el valor resuelto por la promesa.</small><br/>
+    <button onclick="ej5()">Ejecutar Ejercicio 5</button>
+  </div>
+
+ 
+  <div class="ejercicio">
+    <h2>Ejercicio 6 – Scope y variables globales</h2>
+    <small>Objetivo esperado: no contaminar el ámbito global.</small><br/>
+    <button onclick="ej6()">Ejecutar Ejercicio 6</button>
+  </div>
+
+ 
+  <div class="ejercicio"></div>
+    <h2>Ejercicio 7 – Orden de logs síncronos y asíncronos</h2>
+    <small>Objetivo esperado: entender el orden correcto de ejecución.</small><br/>
+    <button onclick="ej7()">Ejecutar Ejercicio 7</button>
+  </div>
+
+ 
+  <div class="ejercicio">
+    <h2>Ejercicio 8 – Destructuring y valores por defecto</h2>
+    <small>Objetivo esperado: evitar errores cuando faltan propiedades.</small><br/>
+    <button onclick="ej8()">Ejecutar Ejercicio 8</button>
+  </div>
+
+  <script>
+    function log(msg) {
+      const div = document.getElementById("log");
+      div.textContent += "\n" + msg;
+      console.log(msg);
+    }
+
+    
+    function ej1() {
+      document.getElementById("log").textContent = "Ejercicio 1:";
+      // corregit: utilitzar 'let' en lloc de 'var' per capturar el valor del bucle a cada iteració (abans 'var i')
+      for (let i = 0; i < 5; i++) {
+        setTimeout(function() {
+          log("Ej1 valor: " + i); 
+        }, i * 300);
+      }
+    }
+
+   
+    // corregit: obtenir l'element amb id i usar una funció normal per tal que 'this' sigui el botó (abans: no id i arrow function)
+    const btnEj2 = document.getElementById("btn-ej2"); 
+    if (btnEj2) {
+      btnEj2.addEventListener("click", function() {
+        this.textContent = "Clicado"; 
+        log("Ej2: se hizo clic en el botón");
+      });
+    }
+
+    
+    const original = [1, 2, 3];
+    function ej3() {
+      document.getElementById("log").textContent = "Ejercicio 3:";
+      // corregit: copiar l'array amb spread per evitar mutació de l'original (abans 'const copia = original')
+      const copia = [...original];
+      copia.push(4);
+      log("Original: " + original.join(","));
+      log("Copia: " + copia.join(","));
+    }
+
+    function tareaQueFalla() {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => reject(new Error("Fallo intencional")), 500);
+      });
+    }
+
+    function ej4() {
+      document.getElementById("log").textContent = "Ejercicio 4:";
+      // corregit: encadenar .catch correctament sense punt i coma entre .then i .catch (abans: ';' abans de .catch)
+      tareaQueFalla()
+        .then((resultado) => {
+          log("Ej4 resultado: " + resultado?.toString());
+        })
+        .catch((err) => {
+          log("Ej4 error capturado: " + err.message);
+        });
+    }
+
+  
+    function promesaLenta() {
+      return new Promise((resolve) => {
+        setTimeout(() => resolve(42), 500);
+      });
+    }
+
+    async function ej5() {
+      document.getElementById("log").textContent = "Ejercicio 5:";
+      // corregit: usar await directament per assignar el resultat (abans: await ... .then(...) i comprovació amb ||)
+      const valor = await promesaLenta();
+      
+      log("Ej5 valor debería ser 42, es: " + valor);
+    }
+
+  
+    function ej6() {
+      document.getElementById("log").textContent = "Ejercicio 6:";
+      // corregit: declarar la variable amb 'let' per no contaminar l'àmbit global (abans 'for (i = 0; ...)')
+      for (let i = 0; i < 3; i++) { 
+        log("Ej6 i dentro del bucle: " + i);
+      }
+      // corregit: ara 'i' no és accessible aquí perquè està limitada al bloque (abans s'accedia a 'i' global)
+      try {
+        log("Ej6 i fuera del bucle (no debería ser accesible): " + i);
+      } catch (e) {
+        log("Ej6 i fuera del bucle (no accesible): " + e.message);
+      }
+    }
+
+   
+    function ej7() {
+      document.getElementById("log").textContent = "Ejercicio 7:";
+      log("Ej7: Inicio");
+      setTimeout(() => log("Ej7: setTimeout 0ms"), 0);
+      Promise.resolve().then(() => log("Ej7: microtarea de promesa"));
+      log("Ej7: Fin");
+     
+    }
+
+    
+    function ej8() {
+      document.getElementById("log").textContent = "Ejercicio 8:";
+      const usuario = { nombre: "Ana" }; 
+      // corregit: afegir valor per defecte a 'edad' per evitar undefined (abans: no valor per defecte)
+      const { nombre, edad = "desconeguda" } = usuario; 
+      log("Ej8 usuario: " + nombre + " (" + edad + " años)");
+    }
+  </script>
+</body>
+</html>
