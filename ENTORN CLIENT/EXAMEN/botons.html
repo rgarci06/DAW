@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Botones 31-60 con errores debugables</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    button { margin: 4px; padding: 8px 12px; cursor: pointer; }
+    #resultado { margin-top: 20px; border: 1px solid #999; padding: 10px; min-height: 40px; white-space: pre-line; }
+  </style>
+</head>
+<body>
+
+<h2>Botones 31 al 60 con errores debugables</h2>
+<p>Cada botón tiene al menos un error intencional (de lógica, sintaxis leve o runtime).</p>
+
+<div>
+  <button onclick="funcion31()">Botón 1</button>
+  <button onclick="funcion32()">Botón 2</button>
+  <button onclick="funcion33()">Botón 3</button>
+  <button onclick="funcion34()">Botón 4</button>
+  <button onclick="funcion35()">Botón 5</button>
+  <button onclick="funcion36()">Botón 6</button>
+  <button onclick="funcion37()">Botón 7</button>
+  <button onclick="funcion38()">Botón 8</button>
+  <button onclick="funcion39()">Botón 9</button>
+  <button onclick="funcion40()">Botón 10</button>
+  <button onclick="funcion41()">Botón 11</button>
+  <button onclick="funcion42()">Botón 12</button>
+  <button onclick="funcion43()">Botón 13</button>
+  <button onclick="funcion44()">Botón 14</button>
+  <button onclick="funcion45()">Botón 15</button>
+  <button onclick="funcion46()">Botón 16</button>
+  <button onclick="funcion47()">Botón 17</button>
+  <button onclick="funcion48()">Botón 18</button>
+  <button onclick="funcion49()">Botón 19</button>
+  <button onclick="funcion50()">Botón 20</button>
+  <button onclick="funcion51()">Botón 21</button>
+  <button onclick="funcion52()">Botón 22</button>
+  <button onclick="funcion53()">Botón 23</button>
+  <button onclick="funcion54()">Botón 24</button>
+  <button onclick="funcion55()">Botón 25</button>
+  <button onclick="funcion56()">Botón 26</button>
+  <button onclick="funcion57()">Botón 27</button>
+  <button onclick="funcion58()">Botón 28</button>
+  <button onclick="funcion59()">Botón 29</button>
+  <button onclick="funcion60()">Botón 30</button>
+</div>
+
+<div id="resultado">Zona de resultados</div>
+
+<script>
+function funcion31() {
+  const valor = "10px";
+  const num = Number.parseInt(valor); /* He tret la x de parseIntx */
+  document.getElementById("resultado").innerText = "31: " + num;
+}
+
+function funcion32() {
+  let edad = 63;
+  if (edad >= 18 && edad <= 65) { /* He possat que la edad sigui major o igual a 18 i menor o igual a 65 */
+    document.getElementById("resultado").innerText = "32: Adulto";
+  } else {
+    document.getElementById("resultado").innerText = "32: No adulto";
+  }
+}
+
+function funcion33() {
+  const texto = "javascript";
+  if (texto.includes("script")) { /* He possat includes en comptes de inclues */
+    document.getElementById("resultado").innerText = "33: contiene 'script'";
+  } else {
+    document.getElementById("resultado").innerText = "33: no contiene 'script'";
+  }
+}
+
+function funcion34() {
+  const arr = [1,2,3]; // He possat length en comptes de lenght
+  document.getElementById("resultado").innerText = "34: longitud " + arr.length;
+}
+
+function funcion35() {
+  const nombre = "Ana";
+  document.getElementById("resultado").innerText = `35: Hola ${nombre}`; // He possar nomès una cometa invertida
+}
+
+function funcion36() {
+  const cadena = "a,b,c";
+  const partes = cadena.splitt(","); // He possat splitt en comptes de split
+  document.getElementById("resultado").innerText = "36: " + partes.join(" | ");
+}
+
+function funcion37() {
+  const nums = [1,2,3];
+  const total = nums.reduce((acc, val) => acc + val, 0); // He tret el {} 
+  document.getElementById("resultado").innerText = "37: total=" + total;
+}
+
+function funcion38() {
+  const nums = [1,2,3];
+  const dobles = nums.map((n) => n * 2); // He tret el {}
+  document.getElementById("resultado").innerText = "38: " + dobles.join(",");
+}
+
+function funcion39() {
+  const n = 123;
+  document.getElementById("resultado").innerText = "39: " + n.toString(); // He possat toString en comptes de toStrng
+}
+
+function funcion40() {
+  const txt = "hola mundo";
+  const nuevo = txt.replace("mundo", "JS"); // He possat replace en comptes de replce
+  document.getElementById("resultado").innerText = "40: " + nuevo;
+}
+
+function funcion41() {
+  const arr = [10, 2, 5];
+  arr.sort((a, b) => a - b); // He canviat b - a per a - b per ordre ascendent
+  document.getElementById("resultado").innerText = "41: " + arr.join(",");
+}
+
+function funcion42() {
+  const d = new Date("2025-12-01"); // Tenia el mes 13 que no existeix
+  document.getElementById("resultado").innerText = "42: " + d.toString();
+}
+
+function funcion43() {
+  const n = [1, 2, 3, 4, 5]; // He canviat n de 1 a 5
+  n.forEach((x) => console.log(x));
+  document.getElementById("resultado").innerText = "43: revisa la consola";
+}
+
+function funcion44() {
+  const obj = {};
+  obj.a = 1; // He afegit la propietat a
+  const txt = JSON.stringify(obj);
+  document.getElementById("resultado").innerText = "44: " + txt;
+}
+
+function funcion45() {
+  let contador = 0;
+  const id = setInterval(() => {
+    contador++;
+    document.getElementById("resultado").innerText = "45: " + contador;
+    if (contador === 5) { // He fet que quan el contador arribi a 5 s'aturi
+      clearInterval(id);
+    }
+  }, 1000); // Amb aixo he fet que compti més lent
+}
+
+function funcion46() {
+  fetch().then(r => r.text()).then(t => {
+    document.getElementById("resultado").innerText = "46: " + t;
+  });
+}
+
+function funcion47() {
+  let mensaje; // He declarat la variable mensaje fora del bucle
+  for (let i = 0; i < 3; i++) {
+    mensaje = "i vale" + i;
+  }
+  document.getElementById("resultado").innerText = "47: " + mensaje;
+}
+
+function funcion48() {
+  const obj = { valor: "valor existent", altre: 123 }; // He canviat la propietat inexistente per valor
+  const valorMostrar = obj.valor; // He canviat obj.inexistente per obj.valor
+  document.getElementById("resultado").innerText = "48: " + valorMostrar;
+}
+
+function funcion49() {
+  const a = 0 || "cero";
+  const b = 1 && "uno";
+  document.getElementById("resultado").innerText = "49: a=" + a + ", b=" + b;
+}
+
+function funcion50() {
+  const expresion = "2 + 3"; // He tret el *
+  const resultado = eval(expresion);
+  document.getElementById("resultado").innerText = "50: " + resultado;
+}
+
+async function funcion51() {
+  const promesa = new Promise((resolve) => {
+    setTimeout(() => resolve("listo"), 300);
+  });
+  const r = await promesa; // He afegit await
+  document.getElementById("resultado").innerText = "51: " + r;
+}
+
+function funcion52() {
+  const obj = {nombre: "Luis", direccion: { ciudad: "Madrid" }};
+  const copia = Object.assign({}, obj);
+  copia.direccion.ciudad = "Roma";
+  document.getElementById("resultado").innerText = "52: " + obj.direccion.ciudad;
+}
+
+function funcion53() {
+  const arr = [1,2,3,4];
+  const encontrado = arr.find((x) => { return x > 2; }); // He possat la x entre () i {}
+  document.getElementById("resultado").innerText = "53: " + encontrado;
+}
+
+function funcion54() {
+  const text = "10px"; // He fet que el 10px pasi a text
+  const n = parseFloat(text); // Posat el text en comptes de num
+  if (Number.isNaN(n)) {
+    document.getElementById("resultado").innerText = "54: valor no vàlid";
+    return;
+  }
+  const suma = n + 5; // Y aqui ja sumo el 10 + 5
+  document.getElementById("resultado").innerText = "54: " + suma;
+}
+
+function funcion55() {
+  const div = document.getElementById("resultado");
+  if (!div) return;
+  div.style.backgroundColor = "#fff8c6";// Li he posat un div amb un background color i he escollit un color clar
+  div.style.border = "1px solid #ffd54f";
+  div.dataset.resaltado = "true";
+}
+
+function funcion56() {
+  const btn = document.activeElement; // He fet que quan es clica el boto canvii el seu text
+  if (btn && btn.tagName === "BUTTON") {
+    btn.textContent = "56 clicado";
+  }
+}
+
+function funcion57() {
+  const el = document.getElementById("resultado");
+  if (!el) return;
+  setTimeout(() => { // He possat que quan passi 1 segon canvii el text
+    el.innerText = "57: timeout";
+  }, 1000);
+}
+
+function funcion58() { // He possat parseFloat perque toFixed no funciona en strings i amb el toFixed he fet que mostri 2 decimals
+  document.getElementById("resultado").innerText = "58: " + parseFloat("3.1416").toFixed(2);
+}
+
+function funcion59() { // He fet que compari els objectes convertint-los a string
+  const a = { x: 1 };
+  const b = { x: 1 };
+  const igual = JSON.stringify(a) === JSON.stringify(b);
+  document.getElementById("resultado").innerText = "59: " + igual;
+}
+
+function funcion60() { // He fet que afegeixi un element extra a l'array i el mostri en una llista i afegeixi extra al final amb concat
+  const texto = "hola";
+  const items = texto.split('').concat('extra');
+  document.getElementById("resultado").innerHTML =
+    '<ul>' + items.map(c => `<li>${c}</li>`).join('') + '</ul>';
+}
+</script>
+
+</body>
+</html>
