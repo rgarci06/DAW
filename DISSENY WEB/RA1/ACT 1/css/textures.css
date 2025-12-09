@@ -1,0 +1,8 @@
+body {
+  background: linear-gradient(rgba(35,36,41,0.55), rgba(94,115,100,0.13)), url('../img/91290.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
