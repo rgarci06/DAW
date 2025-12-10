@@ -91,3 +91,125 @@ h2 {
   color: var(--rich-black);
 }
 
+img,
+.hero-img,
+.card-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Contenidor principal una mica més flexible */
+.main-center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Caixa central original */
+.main-box {
+  max-width: 32rem;
+  margin: 0 auto;
+}
+
+/* Secció de la imatge principal */
+.hero-section {
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+/* Contenidor de les tres cartes */
+.cards-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+/* Cada card */
+.card {
+  flex: 1 1 16rem;      /* base ~256px, permet reorganitzar-se */
+  max-width: 20rem;
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+/* Menú amb classes (usa l'estil actual del header) */
+.site-nav .nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* Mòbils petits: fins a 360px (cobreix 320 i 360) */
+@media (max-width: 22.5rem) {           /* 360px */
+  main {
+    margin: 1.5rem 1rem;
+    padding: 1.5rem;
+  }
+
+  .site-nav .nav-list {
+    flex-direction: column;            /* menú en columna */
+    gap: 0.8rem;
+    align-items: center;
+  }
+
+  .cards-section {
+    flex-direction: column;            /* 1 card per fila */
+    align-items: center;
+  }
+
+  .card {
+    max-width: 18rem;
+  }
+}
+
+/* Mòbils / tauletes petites: 361px - 768px */
+@media (min-width: 22.5rem) and (max-width: 48rem) {  /* 360–768 */
+  main {
+    margin: 2rem 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .site-nav .nav-list {
+    flex-wrap: wrap;
+    gap: 1.2rem;
+  }
+
+  .cards-section {
+    justify-content: center;
+  }
+
+  .card {
+    flex: 1 1 14rem;                   /* poden cabre 2 per fila */
+  }
+}
+
+/* Tauletes: 769px - 1024px */
+@media (min-width: 48rem) and (max-width: 64rem) {     /* 768–1024 */
+  main {
+    max-width: 52rem;
+  }
+}
+
+/* Portàtils: 1025px - 1366px */
+@media (min-width: 64rem) and (max-width: 85.4rem) {   /* 1024–1366 */
+  main {
+    max-width: 64rem;
+  }
+}
+
+/* Pantalles grans: més de 1366px (inclou 1920) */
+@media (min-width: 85.4rem) {                          /* 1366+ */
+  main {
+    max-width: 72rem;
+  }
+}

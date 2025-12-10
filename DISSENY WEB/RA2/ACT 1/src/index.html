@@ -1,34 +1,57 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ca">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- ESCALABILITAT -->
+
     <title>RGARCI | Web Accessible</title>
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/style.css">
   </head>
   <body>
     <header>
-      <nav>
-        <ul>
+      <nav class="site-nav">
+        <ul class="nav-list">
           <li><a href="">Inici</a></li>
           <li><a href="">Contacte</a></li>
           <li><a href="">Serveis</a></li>
           <li><a href="">Portfoli</a></li>
-        
         </ul>
       </nav>
     </header>
+
     <main class="main-center">
-      <div>
+      <!-- BLOC CENTRAL -->
+      <div class="main-box">
         <h2>Benvingut!</h2>
-        <br>
         <p>
-            Aquesta és la meva web accessible creada per Raúl García Magro on podràs trobar informació sobre els meus serveis i portfoli.
+          Aquesta és la meva web accessible creada per Raúl García Magro on
+          podràs trobar informació sobre els meus serveis i portfoli.
         </p>
-        <a class="cta-btn">Descobreix més</a>
+        <a class="cta-btn" href="#serveis">Descobreix més</a>
       </div>
+
+      <!--SECCIÓ 1-->
+      <section class="hero-section">
+        <img src="../img/95638d240e42aa1236d9e15abf7e5501.jpg" alt="Persona treballant en un ordinador" class="hero-img">
+      </section>
+
+      <!--SECCIÓ 2-->
+      <section class="cards-section" id="serveis">
+        <article class="card">
+          <img src="../img/sant-angelo.jpg" class="card-img">
+        </article>
+
+        <article class="card">
+          <img src="../img/vista-del-cielo-estrellado-nocturno-con-paisaje-de-naturaleza-y-montanas.jpg" class="card-img">
+        </article>
+
+        <article class="card">
+          <img src="../img/gran-acantilado-en-la-playa-de-pfeiffer-en-los-estados-unidos-durante-la-puesta-de-sol.jpg" class="card-img">
+        </article>
+      </section>
     </main>
+
     <footer>
       <p>&copy; Web creada i dissenyada per Raúl García Magro</p>
     </footer>
