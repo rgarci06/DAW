@@ -150,20 +150,20 @@ img,
 }
 
 /* Mòbils petits: fins a 360px (cobreix 320 i 360) */
-@media (max-width: 22.5rem) {           /* 360px */
+@media (max-width: 22.5rem) {           
   main {
     margin: 1.5rem 1rem;
     padding: 1.5rem;
   }
-
+/* menú en columna */
   .site-nav .nav-list {
-    flex-direction: column;            /* menú en columna */
+    flex-direction: column;            
     gap: 0.8rem;
     align-items: center;
   }
 
   .cards-section {
-    flex-direction: column;            /* 1 card per fila */
+    flex-direction: column;            
     align-items: center;
   }
 
