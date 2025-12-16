@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vehicle-quotes-web
+  namespace: default
+spec:
+  replicas: 1
+  revisionHistoryLimit: 10
+  progressDeadlineSeconds: 600
+  selector:
+    matchLabels:
+      app: vehicle-quotes-web
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+  template:
+    metadata:
+      labels:
+        app: vehicle-quotes-web
+    spec:
+      containers:
+      - name: vehicle-quotes-web
+        image: localhost:5000/vehicle-quotes-dev:registry
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: POSTGRES_DB
+          value: vehicle_quotes
+        - name: POSTGRES_USER
+          value: vehicle_quotes
+        - name: POSTGRES_PASSWORD
+          value: password
+        - name: CUSTOMCONNSTR_VehicleQuotesContext
+          value: Host=$(VEHICLE_QUOTES_DB_SERVICE_SERVICE_HOST);Database=$(POSTGRES_DB);Username=$(POSTGRES_USER);Password=$(POSTGRES_PASSWORD)
+        ports:
+        - containerPort: 5000
+          name: http
+          protocol: TCP
+        - containerPort: 5001
+          name: https
+          protocol: TCP
+        resources:
+          limits:
+            cpu: "1"
+            memory: 2Gi
+        volumeMounts:
+        - mountPath: /app
+          name: vehicle-quotes-source-code-storage
+      restartPolicy: Always
+      dnsPolicy: ClusterFirst
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - name: vehicle-quotes-source-code-storage
+        persistentVolumeClaim:
+          claimName: vehicle-quotes-source-code-persisent-volume-claim
