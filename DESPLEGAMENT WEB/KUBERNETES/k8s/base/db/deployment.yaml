@@ -35,10 +35,11 @@ spec:
             configMapKeyRef:
               name: postgres-config
               key: POSTGRES_PASSWORD
-        volumeMounts:
-        - name: vehicle-quotes-postgres-data-storage
-          mountPath: /var/lib/postgresql/data
-      volumes:
-      - name: vehicle-quotes-postgres-data-storage
-        persistentVolumeClaim:
-          claimName: vehicle-quotes-postgres-data-persisent-volume-claim
+        # Quita estos dos bloques:
+        # volumeMounts:
+        # - name: vehicle-quotes-postgres-data-storage
+        #   mountPath: /var/lib/postgresql/data
+      # volumes:
+      # - name: vehicle-quotes-postgres-data-storage
+      #   persistentVolumeClaim:
+      #     claimName: vehicle-quotes-postgres-data-persisent-volume-claim

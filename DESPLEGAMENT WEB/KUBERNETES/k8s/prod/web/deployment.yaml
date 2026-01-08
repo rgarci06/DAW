@@ -19,9 +19,6 @@ spec:
         image: localhost:5000/vehicle-quotes-dev:registry
         imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 5000
-          name: http
-          protocol: TCP
         - containerPort: 5001
           name: https
           protocol: TCP
@@ -47,10 +44,3 @@ spec:
           limits:
             cpu: "1"
             memory: 2Gi
-        volumeMounts:
-        - name: vehicle-quotes-source-code-storage
-          mountPath: /app
-      volumes:
-      - name: vehicle-quotes-source-code-storage
-        persistentVolumeClaim:
-          claimName: vehicle-quotes-source-code-persisent-volume-claim
