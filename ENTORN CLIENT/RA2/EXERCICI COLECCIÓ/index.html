@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercicis col·lecció</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>ExColecció_RGarci</h1>
+
+  <!-- Botons per executar exercicis 1-7 (resultat a la consola) -->
+  <button onclick="provaEx1()">Exercici 1</button>
+  <button onclick="provaEx2()">Exercici 2</button>
+  <button onclick="provaEx3()">Exercici 3</button>
+  <button onclick="provaEx4()">Exercici 4</button>
+  <button onclick="provaEx5()">Exercici 5</button>
+  <button onclick="provaEx6()">Exercici 6</button>
+  <button onclick="provaEx7()">Exercici 7</button>
+
+  <!-- Exercici 8: menú propi amb prompt -->
+  <button onclick="iniciarMenuEx8()">Exercici 8 (menú)</button>
+
+  <p>Obre la consola (F12) per veure els resultats. Al principi a la consola surten errors, has de fer click a un boto per inicialitzar l'inventari.</p>
+
+  <!-- Arxius JS dels exercicis -->
+  <script src="ExColecció1_RGarci.js"></script>
+  <script src="ExColecció2_RGarci.js"></script>
+  <script src="ExColecció3_RGarci.js"></script>
+  <script src="ExColecció4_RGarci.js"></script>
+  <script src="ExColecció5_RGarci.js"></script>
+  <script src="ExColecció6_RGarci.js"></script>
+  <script src="ExColecció7_RGarci.js"></script>
+  <script src="ExColecció8_RGarci.js"></script>
+
+  <!-- Crides de prova molt simples -->
+  <script>
+    function provaEx1() {
+      console.clear();
+      // adapta aquestes crides al que tinguis a ExColecció1_RGarci.js
+      llistarProductes();
+      comprar("Teclat", 2);
+      llistarProductes();
+    }
+
+    function provaEx2() {
+      console.clear();
+      altaProducte("Tablet", 4);
+      baixaProducte("Ratolí");
+      console.log(inventari);
+    }
+
+    function provaEx3() {
+      console.clear();
+      rankingMesVenuts();
+    }
+
+    function provaEx4() {
+      console.clear();
+      console.log(senseEstoc());
+      console.log("Hi ha sense estoc?", hiHaSenseEstoc());
+    }
+
+    function provaEx5() {
+      console.clear();
+      estadistiquesInventari();
+    }
+
+    function provaEx6() {
+      console.clear();
+      actualitzarMapDesDeArray();
+      console.log(estocPerNom);   // o el que hagis definit
+    }
+
+    function provaEx7() {
+      console.clear();
+      categoriesUniques();
+    }
+
+    // Per l'exercici 8: simplement cridem menu() que està definit a ExColecció8_RGarci.js
+  function iniciarMenuEx8() {
+    console.clear();
+    menu();  // usa la función menu() del JS anterior
+  } 
+  </script>
+</body>
+</html>

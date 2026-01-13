@@ -1,0 +1,49 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Fondo clarito y tipografia simple */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #222;
+  padding: 20px;
+}
+
+/* Títol principal */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Text informatiu */
+p {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Contenidor de botons */
+button {
+  display: inline-block;
+  margin: 5px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #3498db;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Efecte al passar el ratolí */
+button:hover {
+  background-color: #2980b9;
+}
+
+/* Per centrar els botons si vols */
+body {
+  text-align: center;
+}
