@@ -1,4 +1,3 @@
-// ExColecció7_RGarci.js
 // CATEGORIES ÚNIQUES - RGarci
 
 let inventari = [

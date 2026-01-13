@@ -1,4 +1,3 @@
-// ExColecció8_RGarci.js
 // MENÚ DE GESTIÓ PER CONSOLA (AMB prompt) - Navegador
 
 // --- Funcions bàsiques (ex8) ---

@@ -1,7 +1,5 @@
 // ALTA I BAIXA DE PRODUCTES - RGarci
 
-
-
 // Busca un producte pel nom
 function cercarProducte(nom) {
   for (let i = 0; i < inventari.length; i++) {
