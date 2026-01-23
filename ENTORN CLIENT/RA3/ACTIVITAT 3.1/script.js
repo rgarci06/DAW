@@ -1,7 +1,6 @@
-// 2. LÒGICA JAVASCRIPT amb LocalStorage
 let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
-// Carrega tasques al inici
+// Carrega les tasques al inici
 displayTasks();
 
 // Event listeners
@@ -28,10 +27,10 @@ function addTask() {
         completed: false
     });
 
-    // Guardar a LocalStorage
+    // Guardar al LocalStorage
     saveTasks();
     
-    // Actualitzar pantalla
+    // Actualitza la pantalla
     displayTasks();
     
     // Netejar input
@@ -56,7 +55,7 @@ function toggleTask(id) {
 function saveTasks() {
     localStorage.setItem('tasks', JSON.stringify(tasks));
 }
-
+// Mostra les tasques a la pantalla
 function displayTasks() {
     const taskList = document.getElementById('taskList');
     
@@ -67,7 +66,7 @@ function displayTasks() {
 
     taskList.innerHTML = tasks.map(task => `
         <li class="${task.completed ? 'completed' : ''}" ondblclick="toggleTask(${task.id})">
-            <span>${task.text}</span>
+            <span class="task-text">${task.text}</span>
             <div>
                 <button class="delete-btn" onclick="deleteTask(${task.id})">🗑️</button>
             </div>
