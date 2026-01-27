@@ -1,23 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@600;800&display=swap');
 
 :root {
-    --bg-color: #FFD600;    /* Amarillo vibrante */
+    --bg-color: #FFD600;
     --card-bg: #FFFFFF;
-    --accent-blue: #2962FF; /* Azul eléctrico */
-    --accent-pink: #FF4081; /* Rosa neón */
+    --accent-blue: #2962FF;
+    --accent-pink: #FF4081;
     --text-color: #1A1A1A;
-    --border-width: 3px;    /* Bordes gruesos estilo comic */
+    --border-width: 3px;
 }
 
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
+    /* Aplicamos la fuente a todo el cuerpo */
     font-family: 'Outfit', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 60px 20px;
     margin: 0;
+}
+
+/* Forzamos a que todos los elementos de control usen la misma letra */
+input, button, span, div {
+    font-family: 'Outfit', sans-serif;
 }
 
 h1 {
@@ -31,10 +37,103 @@ h1 {
     margin-bottom: 40px;
 }
 
-/* Contenedor de entrada */
+/* --- GRUPO DE ACCIONES --- */
+.actions-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* --- BOTONES (Afegeix, Borrar, +/-) --- */
+#addBtn, .delete-btn, .counter-btn {
+    border: var(--border-width) solid var(--text-color);
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 800; /* Letra gruesa como el resto */
+    transition: all 0.1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Animación de "Acercarse/Elevarse" en Hover */
+#addBtn:hover, .delete-btn:hover, .counter-btn:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 4px 4px 0px var(--text-color);
+}
+
+/* Animación de Click (Efecto hundir) */
+#addBtn:active, .delete-btn:active, .counter-btn:active {
+    box-shadow: 0px 0px 0px var(--text-color) !important;
+    transform: translate(2px, 2px) !important;
+}
+
+/* --- ESTILO ESPECÍFICO BOTÓN AFEGEIX --- */
+#addBtn {
+    background: var(--accent-blue);
+    color: white;
+    padding: 0 20px;
+    font-size: 1rem; /* Ajustado para que la letra luzca igual */
+    box-shadow: 4px 4px 0px var(--text-color);
+}
+
+/* --- CONTADOR --- */
+.counter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.counter-btn {
+    background: white;
+    width: 32px;
+    height: 32px;
+    font-size: 1.2rem;
+    box-shadow: 1px 1px 0px var(--text-color);
+}
+
+.count {
+    font-weight: 800;
+    font-size: 1.2rem;
+    min-width: 25px;
+    text-align: center;
+}
+
+/* --- LISTA Y TAREAS --- */
+ul {
+    width: 100%;
+    max-width: 550px;
+    padding: 0;
+    list-style: none;
+}
+
+li {
+    background: var(--card-bg);
+    border: var(--border-width) solid var(--text-color);
+    padding: 12px 20px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 6px 6px 0px var(--text-color);
+}
+
+.task-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.delete-btn {
+    background: var(--accent-pink);
+    color: white;
+    padding: 8px 12px;
+    box-shadow: 3px 3px 0px var(--text-color);
+}
+
+/* Input Styles */
 .input-container {
     width: 100%;
-    max-width: 500px;
+    max-width: 550px;
     display: flex;
     gap: 10px;
     margin-bottom: 30px;
@@ -51,136 +150,5 @@ h1 {
     box-shadow: 4px 4px 0px var(--text-color);
 }
 
-/* Botón Añadir con diseño bloque */
-#addBtn {
-    background: var(--accent-blue);
-    color: white;
-    border: var(--border-width) solid var(--text-color);
-    padding: 0 25px;
-    font-size: 1rem;
-    font-weight: 800;
-    cursor: pointer;
-    box-shadow: 4px 4px 0px var(--text-color);
-    text-transform: uppercase;
-}
-
-#addBtn:active {
-    box-shadow: 0px 0px 0px var(--text-color);
-    transform: translate(4px, 4px);
-}
-
-/* Lista de tareas */
-ul {
-    width: 100%;
-    max-width: 500px;
-    padding: 0;
-    list-style: none;
-}
-
-li {
-    background: var(--card-bg);
-    border: var(--border-width) solid var(--text-color);
-    padding: 15px 20px;
-    margin-bottom: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 6px 6px 0px var(--text-color);
-}
-
-li span {
-    font-size: 1.2rem;
-    font-weight: 600;
-}
-
-/* Tarea completada */
-li.completed {
-    background: #f0f0f0;
-    color: #a0a0a0;
-    box-shadow: 2px 2px 0px var(--text-color);
-}
-
-li.completed span {
-    text-decoration: line-through solid var(--accent-pink) 4px;
-}
-
-/* Botón Borrar con diseño */
-.delete-btn {
-    background: var(--accent-pink);
-    color: white;
-    border: var(--border-width) solid var(--text-color);
-    padding: 8px 15px;
-    font-weight: 800;
-    cursor: pointer;
-    box-shadow: 3px 3px 0px var(--text-color);
-    text-transform: uppercase;
-    font-size: 0.8rem;
-}
-
-.delete-btn:active {
-    box-shadow: 0px 0px 0px var(--text-color);
-    transform: translate(3px, 3px);
-}
-
-/* Contenedor del contador (botones + y -) */
-.counter {
-    display: flex;
-    align-items: center;
-    background: #f0f0f0;
-    border: 2px solid var(--text-color);
-    border-radius: 8px;
-    overflow: hidden;
-    margin: 0 15px;
-}
-
-.counter-btn {
-    background: white;
-    border: none;
-    padding: 5px 12px;
-    font-family: 'Outfit', sans-serif;
-    font-weight: 800;
-    font-size: 1.1rem;
-    cursor: pointer;
-    color: var(--text-color);
-    transition: background 0.1s;
-}
-
-.counter-btn:first-child {
-    border-right: 2px solid var(--text-color);
-}
-
-.counter-btn:last-child {
-    border-left: 2px solid var(--text-color);
-}
-
-.counter-btn:hover {
-    background: var(--bg-color); /* Cambia al amarillo del fondo */
-}
-
-.count {
-    padding: 0 12px;
-    font-weight: 800;
-    min-width: 30px;
-    text-align: center;
-}
-
-/* Ajuste para que la tarea se vea bien alineada */
-.task-main {
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-}
-
-.task-text {
-    flex-grow: 1;
-}
-
-/* El botón de eliminar con emoji */
-.delete-btn {
-    font-size: 1.2rem;
-    padding: 8px;
-    line-height: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+li.completed { background: #f0f0f0; opacity: 0.7; }
+li.completed span { text-decoration: line-through solid var(--accent-pink) 4px; }
