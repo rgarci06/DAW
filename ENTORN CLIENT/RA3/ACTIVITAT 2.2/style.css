@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@600;800&display=swap');
+
+:root {
+    --bg-color: #FFD600;    /* Amarillo vibrante */
+    --card-bg: #FFFFFF;
+    --accent-blue: #2962FF; /* Azul eléctrico */
+    --accent-pink: #FF4081; /* Rosa neón */
+    --text-color: #1A1A1A;
+    --border-width: 3px;    /* Bordes gruesos estilo comic */
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px;
+    margin: 0;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    background: var(--card-bg);
+    padding: 10px 30px;
+    border: var(--border-width) solid var(--text-color);
+    box-shadow: 8px 8px 0px var(--text-color);
+    margin-bottom: 40px;
+}
+
+/* Contenedor de entrada */
+.input-container {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+#taskInput {
+    flex: 1;
+    background: var(--card-bg);
+    border: var(--border-width) solid var(--text-color);
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    outline: none;
+    box-shadow: 4px 4px 0px var(--text-color);
+}
+
+/* Botón Añadir con diseño bloque */
+#addBtn {
+    background: var(--accent-blue);
+    color: white;
+    border: var(--border-width) solid var(--text-color);
+    padding: 0 25px;
+    font-size: 1rem;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px var(--text-color);
+    text-transform: uppercase;
+}
+
+#addBtn:active {
+    box-shadow: 0px 0px 0px var(--text-color);
+    transform: translate(4px, 4px);
+}
+
+/* Lista de tareas */
+ul {
+    width: 100%;
+    max-width: 500px;
+    padding: 0;
+    list-style: none;
+}
+
+li {
+    background: var(--card-bg);
+    border: var(--border-width) solid var(--text-color);
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 6px 6px 0px var(--text-color);
+}
+
+li span {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* Tarea completada */
+li.completed {
+    background: #f0f0f0;
+    color: #a0a0a0;
+    box-shadow: 2px 2px 0px var(--text-color);
+}
+
+li.completed span {
+    text-decoration: line-through solid var(--accent-pink) 4px;
+}
+
+/* Botón Borrar con diseño */
+.delete-btn {
+    background: var(--accent-pink);
+    color: white;
+    border: var(--border-width) solid var(--text-color);
+    padding: 8px 15px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 3px 3px 0px var(--text-color);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.delete-btn:active {
+    box-shadow: 0px 0px 0px var(--text-color);
+    transform: translate(3px, 3px);
+}
+
+/* Contenedor del contador (botones + y -) */
+.counter {
+    display: flex;
+    align-items: center;
+    background: #f0f0f0;
+    border: 2px solid var(--text-color);
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 0 15px;
+}
+
+.counter-btn {
+    background: white;
+    border: none;
+    padding: 5px 12px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: background 0.1s;
+}
+
+.counter-btn:first-child {
+    border-right: 2px solid var(--text-color);
+}
+
+.counter-btn:last-child {
+    border-left: 2px solid var(--text-color);
+}
+
+.counter-btn:hover {
+    background: var(--bg-color); /* Cambia al amarillo del fondo */
+}
+
+.count {
+    padding: 0 12px;
+    font-weight: 800;
+    min-width: 30px;
+    text-align: center;
+}
+
+/* Ajuste para que la tarea se vea bien alineada */
+.task-main {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.task-text {
+    flex-grow: 1;
+}
+
+/* El botón de eliminar con emoji */
+.delete-btn {
+    font-size: 1.2rem;
+    padding: 8px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
