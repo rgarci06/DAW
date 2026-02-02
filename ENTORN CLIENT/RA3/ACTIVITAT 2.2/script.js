@@ -1,9 +1,8 @@
 let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
-// Afegeix comptador i assegura que completed estigui desactivat (compatibilitat versions anteriors)
+// Afegeix comptador a tasques existents (compatibilitat versions anteriors)
 tasks = tasks.map(task => ({
     ...task,
-    completed: false,
     count: typeof task.count === 'number' ? task.count : 1
 }));
 
@@ -93,18 +92,51 @@ function displayTasks() {
     }
 
     taskList.innerHTML = tasks.map(task => `
-        <li class="${task.completed ? 'completed' : ''}">
+        <li class="${task.completed ? 'completed' : ''}" data-task-id="${task.id}">
             <div class="task-main">
                 <span class="task-text">${task.text}</span>
                 <div class="counter">
-                    <button class="counter-btn" onclick="decrementCount(${task.id}); event.stopPropagation();">-</button>
+                    <button class="counter-btn decrement" data-task-id="${task.id}">-</button>
                     <span class="count">${task.count}</span>
-                    <button class="counter-btn" onclick="incrementCount(${task.id}); event.stopPropagation();">+</button>
+                    <button class="counter-btn increment" data-task-id="${task.id}">+</button>
                 </div>
             </div>
             <div class="actions">
-                <button class="delete-btn" onclick="deleteTask(${task.id}); event.stopPropagation();">🗑️</button>
+                <button class="delete-btn" data-task-id="${task.id}">🗑️</button>
             </div>
         </li>
     `).join('');
+    
+    // Event listeners
+    document.querySelectorAll('.counter-btn.increment').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            incrementCount(parseInt(this.dataset.taskId));
+        });
+    });
+    
+    document.querySelectorAll('.counter-btn.decrement').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            decrementCount(parseInt(this.dataset.taskId));
+        });
+    });
+    
+    document.querySelectorAll('.delete-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            deleteTask(parseInt(this.dataset.taskId));
+        });
+    });
+    
+    document.querySelectorAll('li').forEach(li => {
+        li.addEventListener('dblclick', function(e) {
+            if (!e.target.classList.contains('counter-btn') && !e.target.classList.contains('delete-btn')) {
+                toggleTask(parseInt(this.dataset.taskId));
+            }
+        });
+    });
 }
