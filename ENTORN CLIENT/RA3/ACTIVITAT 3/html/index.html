@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>App de Preferencias</title>
+    <link rel="stylesheet" href="../style.css"> </head>
+<body>
+    <h1>Gestor de Preferencias Personales</h1>
+    
+    <nav>
+        <a href="settings.html">Ajustes</a> | 
+        <a href="summary.html">Resumen</a>
+    </nav>
+
+    <section>
+        <h3>Configuración de Tema</h3>
+        <select id="themeSelector">
+            <option value="light">Tema Claro</option>
+            <option value="dark">Tema Oscuro</option>
+        </select>
+    </section>
+
+    <section>
+        <h3>Mi Lista</h3>
+        <input type="text" id="itemInput" placeholder="Escribe algo...">
+        <button id="addBtn">Agregar</button>
+        <ul id="itemList"></ul>
+    </section>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
