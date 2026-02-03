@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activitat Interactiva - Eina p5.js</title>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+    
+    <style>
+        /* Estils bàsics per centrar el contingut */
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+        canvas {
+            /* Vora per veure on acaba l'àrea interactiva */
+            border: 4px solid #333;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Exemple Pràctic: Pissarra Interactiva (p5.js)</h1>
+    <p><strong>Instruccions:</strong> Mou el ratolí per pintar. Fes <strong>CLIC</strong> per esborrar i canviar de color.</p>
+
+    <script>
+        // Variables globals
+        let r, g, b;
+
+        // Aquesta funció s'executa una sola vegada al principi
+        function setup() {
+            createCanvas(600, 400); // Creem un llenç de 600x400 píxels
+            background(255);        // Pintem el fons de blanc
+            pickColor();            // Triem un color inicial
+        }
+
+        // Aquesta funció s'executa contínuament (bucle de dibuix)
+        function draw() {
+            // Dibuixa un cercle a la posició X i Y del ratolí
+            noStroke(); // Sense vora
+            fill(r, g, b, 150); // Color amb una mica de transparència
+            circle(mouseX, mouseY, 25);
+        }
+
+        // Aquesta funció detecta quan l'usuari fa clic
+        function mousePressed() {
+            background(255); // Esborra la pantalla (la torna a pintar blanca)
+            pickColor();     // Canvia el color del pinzell
+        }
+
+        // Funció pròpia per triar colors aleatoris
+        function pickColor() {
+            r = random(255);
+            g = random(255);
+            b = random(255);
+        }
+    </script>
+
+</body>
+</html>
