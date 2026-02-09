@@ -5,25 +5,23 @@ const itemList = document.getElementById('itemList');
 
 let items = JSON.parse(localStorage.getItem('myList')) || [];
 
-// Al cargar la página
 window.addEventListener('load', () => {
-    // 1. Cargar y aplicar tema
+    // 1. Carregar i aplicar tema
     const savedTheme = localStorage.getItem('theme') || 'light';
     themeSelector.value = savedTheme;
     applyTheme(savedTheme);
 
-    // 2. Renderizar lista
+    // 2. Renderitza la llista
     renderList();
 });
 
-// Al cambiar el selector
 themeSelector.addEventListener('change', () => {
     const selectedTheme = themeSelector.value;
     localStorage.setItem('theme', selectedTheme);
     applyTheme(selectedTheme);
 });
 
-// Función que "enciende/apaga" el modo oscuro en el CSS
+// Funció que "encén/apaga" el mode fosc al CSS
 function applyTheme(theme) {
     if (theme === 'dark') {
         document.body.classList.add('dark-mode');
@@ -32,7 +30,7 @@ function applyTheme(theme) {
     }
 }
 
-// Lógica de la lista
+// Lògica de la llista
 addBtn.addEventListener('click', () => {
     const text = itemInput.value.trim();
     if (text !== "") {
