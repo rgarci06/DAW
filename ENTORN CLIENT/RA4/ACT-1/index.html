@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saludo con XMLHttpRequest</title>
+</head>
+<body>
+  <button id="btnSaludar">Saludar</button>
+  <div id="mensaje"></div>
+
+  <script>
+    const boton = document.getElementById("btnSaludar");
+    const mensaje = document.getElementById("mensaje");
+
+    boton.addEventListener("click", function () {
+      const xhr = new XMLHttpRequest();
+      xhr.open("GET", "saludo.txt", true);
+
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          mensaje.textContent = xhr.responseText;
+        }
+      };
+
+      xhr.send();
+    });
+  </script>
+</body>
+</html>
