@@ -1,0 +1,70 @@
+/* Estil base */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #fafafa; /* Gris molt suau de fons */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+}
+
+/* Botó */
+#btnCarregar {
+    background-color: #000; /* Negre pur */
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.2s;
+    margin-bottom: 30px;
+}
+
+#btnCarregar:hover {
+    background-color: #444; /* Gris fosc al passar el ratolí */
+}
+
+/* La Taula */
+table {
+    width: 90%;
+    max-width: 700px;
+    border-collapse: collapse; /* Línies fines */
+    background: #fff;
+    border: 1px solid #eee;
+}
+
+/* Capçalera */
+thead {
+    border-bottom: 2px solid #000;
+}
+
+th {
+    padding: 15px;
+    text-align: left;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #888;
+}
+
+/* Cel·les */
+td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    font-size: 15px;
+}
+
+/* Efecte al passar el ratolí */
+tbody tr:hover {
+    background-color: #fcfcfc;
+}
+
+/* Preu destacat*/
+td:last-child {
+    font-weight: bold;
+    text-align: right; /* Preus a la dreta, com a les factures reals */
+}
