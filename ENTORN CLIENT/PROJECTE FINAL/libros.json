@@ -1,0 +1,16 @@
+[
+    {
+        "titulo": "El Señor de los Anillos",
+        "autor": "J.R.R. Tolkien",
+        "isbn": "978-8-44507",
+        "anio": 1954,
+        "prestamos": 12
+    },
+    {
+        "titulo": "Cien años de soledad",
+        "autor": "Gabriel García Márquez",
+        "isbn": "843-7-60494",
+        "anio": 1967,
+        "prestamos": 8
+    }
+]

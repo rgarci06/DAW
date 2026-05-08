@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestió de Biblioteca</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        section { margin-bottom: 20px; }
+        input, button { margin: 5px; padding: 5px; }
+        li { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+    <h1>Gestió de Biblioteca</h1>
+    
+    <section id="seccio-registre">
+        <form id="formLibro">
+            <input id="titulo" placeholder="Títol" required>
+            <input id="autor" placeholder="Autor" required>
+            <input id="isbn" placeholder="ISBN (Format: 000-0-000)">
+            <input id="anio" placeholder="Any de publicació" required>
+            <button type="submit">Afegir llibre</button>
+        </form>
+    </section>
+    
+    <hr>
+    
+    <section id="seccio-busqueda">
+        <input id="busqueda" placeholder="Cercar per títol o autor...">
+        <div id="stats"></div> 
+    </section>
+    
+    <ul id="listaLibros"></ul>
+    
+    <section id="acciones-globales">
+        <button id="btnRanking">Veure Rànquing Préstecs</button>
+        <button id="btnGuardar">Guardar a LocalStorage</button>
+        <button id="btnCargar">Recuperar de LocalStorage</button>
+        <button id="btnFetch">Importar Llibres (JSON)</button>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>
